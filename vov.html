@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"> 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  
+  <title>80_steps_to_Victory</title> 
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Соединение с сервером шрифтов Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Соединение с сервером шрифтов Google Fonts с использованием crossorigin -->
+  <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik+Wet+Paint&display=swap" 
+  rel="stylesheet"> <!-- Подключение шрифтов Google Fonts -->
+  
+  <link rel="stylesheet" type="text/css" href="CSS/slick.css"/> <!-- Подключение стилей для библиотеки Slick -->
+  <link rel="stylesheet" type="text/css" href="CSS/slick-theme.css"/> <!-- Подключение темы стилей для библиотеки Slick -->
+  
+  <link rel="stylesheet" href="CSS/all.min.css"> <!-- Подключение стилей для иконочного шрифта Font Awesome -->
+  <link rel="stylesheet" href="CSS/styles.css"> <!-- Подключение основных стилей сайта -->
+  
+</head>
+<body>
+  <!-- 
+  Навигационный блок.
+  Этот блок включает в себя логотип, меню навигации и кнопку "Наши проекты".-->
+<div class="navigation">
+  <!-- Ссылка на сайт учреждения образования-->
+  <a href="https://vgik.by/" target="_blank" class="logo_link">
+    <img src="images/content/logo_vgik-01-02.png" alt="Логотип ВГИК">
+  </a>
+  
+  <!-- Основное меню навигации -->
+  <nav class="menu">
+    <!-- Кнопка для открытия/закрытия меню на мобильных устройствах -->
+    <button class="menu_toggler" onclick="menuToggle()"></button>
+    
+    <!-- Список пунктов основного меню -->
+    <ul class="menu_list">
+      <li class="menu_item">
+        <a href="Index.html" class="menu_link">Главная</a>
+        <div class="menu_dropdown">
+          <div class="submenu-image">
+            <img src="images/collage.jpg">
+          </div>
+          <ul class="submenu">
+            <li class="submenu_item"><a href="vov.html">Хронология ВОВ</a></li>
+            <li class="submenu_item"><a href="events.html">Основные события ВОВ</a></li>
+            <li class="submenu_item"><a href="chronicle.html">Хроника освобождения Беларуси</a></li>
+            <li class="submenu_item"><a href="#">Витебск в годы ВОВ</a></li>
+            <li class="submenu_item"><a href="#">Геноцид белорусского народа в годы ВОВ</a></li>
+            <li class="submenu_item"><a href="memories.html">Воспоминания и рассказы участников ВОВ</a></li>
+          </ul>
+        </div>
+      </li>
+      
+      <li class="menu_item">
+        <a href="test.html" class="menu_link">Задания</a>
+        <div class="menu_dropdown">
+          <div class="submenu-image">
+            <img src="images/hand.jpg">
+          </div>
+          <ul class="submenu">
+            <li class="submenu_item"><a href="test.html">Викторина "ВОВ в числах"</a></li>
+            <li class="submenu_item"><a href="test.html">Кроссворд "80 шагов к Победе"</a></li>
+            <li class="submenu_item"><a href="#">Тест "Основные события ВОВ"</a></li>
+            <li class="submenu_item"><a href="#">Игра "1945"</a></li>
+          </ul>
+        </div>
+      </li>
+      
+      <li class="menu_item">
+        <a href="film.html" class="menu_link">Фильмотека</a>
+        <div class="menu_dropdown">
+          <div class="submenu-image">
+            <img src="images/soldier.jpg">
+          </div>
+          <ul class="submenu">
+            <li class="submenu_item"><a href="film.html">Военная драма "Солдатик"</a></li>
+            <li class="submenu_item"><a href="film.html">Военная драма "Девочка ищет отца"</a></li>
+            <li class="submenu_item"><a href="film.html">Военная драма "Брестская крепость"</a></li>
+            <li class="submenu_item"><a href="film.html">Военная драма "Мальчик в полосатой пижаме"</a></li>
+            <li class="submenu_item"><a href="film.html">Военная драма "А зори здесь тихие..."</a></li>
+            <li class="submenu_item"><a href="film.html">Военная драма "Сталинград"</a></li>
+          </ul>
+        </div>
+      </li>
+      
+      <li class="menu_item">
+        <a href="about.html" class="menu_link">О нас</a>
+        <div class="menu_dropdown">
+          <div class="submenu-image">
+            <img src="images/vgik.jpg">
+          </div>
+          <ul class="submenu">
+            <li class="submenu_item"><a href="about.html">О проекте</a></li>
+            <li class="submenu_item"><a href="about.html">О нас</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+    </div>
+    <div class="banner_title">       
+      <h1>Хронология Великой Отечественной войны</h1>
+      <hr class="centered-line">
+    </div>
+
+    <div class="container">
+    <div class="note container_note-01">
+      <button class="button container_button"><strong>1941</strong></button>
+      <div class="note_text">
+        <button class="close-button">&times;</button>
+        <h2>Lorem ipsum</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          in viverra urna, id commodo arcu. Praesent id placerat odio, eu
+          fringilla orci. Etiam leo neque, tincidunt nec ullamcorper vel,
+          convallis ac ligula. Maecenas imperdiet luctus quam, sed hendrerit
+          purus. Fusce id tristique tortor. Sed venenatis erat eu enim porta,
+          id laoreet diam ultrices. Duis efficitur malesuada massa sit amet
+          laoreet. Ut arcu felis, accumsan ac arcu vel, rutrum euismod ipsum.
+          Proin vitae ipsum purus.
+        </p>
+      </div>
+    </div>
+    <div class="note container_note-02">
+      <button class="button container_button"><strong>1942</strong></button>
+      <div class="note_text">
+        <button class="close-button">&times;</button>
+        <h2>Lorem ipsum</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          in viverra urna, id commodo arcu. Praesent id placerat odio, eu
+          fringilla orci. Etiam leo neque, tincidunt nec ullamcorper vel,
+          convallis ac ligula. Maecenas imperdiet luctus quam, sed hendrerit
+          purus. Fusce id tristique tortor. Sed venenatis erat eu enim porta,
+          id laoreet diam ultrices. Duis efficitur malesuada massa sit amet
+          laoreet. Ut arcu felis, accumsan ac arcu vel, rutrum euismod ipsum.
+          Proin vitae ipsum purus.
+        </p>
+      </div>
+    </div>
+    <div class="note container_note-03">
+      <button class="button container_button"><strong>1943</strong></button>
+      <div class="note_text">
+        <button class="close-button">&times;</button>
+        <h2>Lorem ipsum</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          in viverra urna, id commodo arcu. Praesent id placerat odio, eu
+          fringilla orci. Etiam leo neque, tincidunt nec ullamcorper vel,
+          convallis ac ligula. Maecenas imperdiet luctus quam, sed hendrerit
+          purus. Fusce id tristique tortor. Sed venenatis erat eu enim porta,
+          id laoreet diam ultrices. Duis efficitur malesuada massa sit amet
+          laoreet. Ut arcu felis, accumsan ac arcu vel, rutrum euismod ipsum.
+          Proin vitae ipsum purus.
+        </p>
+      </div>
+    </div>
+    <div class="note container_note-04">
+      <button class="button container_button"><strong>1944</strong></button>
+      <div class="note_text">
+        <button class="close-button">&times;</button>
+        <h2>Lorem ipsum</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          in viverra urna, id commodo arcu. Praesent id placerat odio, eu
+          fringilla orci. Etiam leo neque, tincidunt nec ullamcorper vel,
+          convallis ac ligula. Maecenas imperdiet luctus quam, sed hendrerit
+          purus. Fusce id tristique tortor. Sed venenatis erat eu enim porta,
+          id laoreet diam ultrices. Duis efficitur malesuada massa sit amet
+          laoreet. Ut arcu felis, accumsan ac arcu vel, rutrum euismod ipsum.
+          Proin vitae ipsum purus.
+        </p>
+      </div>
+    </div>
+    <div class="note container_note-05">
+      <button class="button container_button"><strong>1945</strong></button>
+      <div class="note_text">
+        <button class="close-button">&times;</button>
+        <h2>Lorem ipsum</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          in viverra urna, id commodo arcu. Praesent id placerat odio, eu
+          fringilla orci. Etiam leo neque, tincidunt nec ullamcorper vel,
+          convallis ac ligula. Maecenas imperdiet luctus quam, sed hendrerit
+          purus. Fusce id tristique tortor. Sed venenatis erat eu enim porta,
+          id laoreet diam ultrices. Duis efficitur malesuada massa sit amet
+          laoreet. Ut arcu felis, accumsan ac arcu vel, rutrum euismod ipsum.
+          Proin vitae ipsum purus.
+        </p>
+      </div>
+    </div>
+    
+    <div class="container_content">
+    <p>Великая Отечественная война (22 июня 1941 — 9 мая 1945) — война СССР против 
+      нацистской Германии и ее союзников. Является важнейшей составной частью Второй 
+      мировой войны, в ходе которой Красная Армия разгромила вооруженные силы Германии, 
+      изгнала их из Советского Союза и освободила оккупированные Третьим рейхом страны 
+      Восточной и Центральной Европы. Завершилась война взятием советскими войсками Берлина
+       и безоговорочной капитуляцией Германии.</p> 
+       <img src="images/map2.jpg">
+    <h2>Обстановка накануне войны</h2>
+    <p>Нацисты во главе с Гитлером после прихода к власти в Германии взяли курс на отмену 
+      статей Версальского договора. При попустительстве правительств Великобритании и Франции 
+      Германия к 1939 году оккупировала Австрию и провела раздел Чехословакии, существенно 
+      нарастив свой военный и промышленный потенциал.</p>
+    <p>Видя агрессивность Третьего рейха, весной 1939 года Советский Союз предложил западным 
+      державам подписать трехсторонний договор о взаимопомощи между СССР, Францией и Великобританией, 
+      но фактически получил отказ.</p>
+    <p>Тогда СССР пошел на сближение с Германией, и 23 августа 1939 года между Советским Союзом 
+      и Германией был подписан договор о ненападении сроком на 10 лет, известный как Пакт
+       Молотова — Риббентропа. Договор включал также секретный протокол.</p>
+
+    <h2>Начало войны</h2>
+    <p>На начало войны Германия не имела преимущества в количестве личного состава и вооружения,
+       но сумела сосредоточить превосходящие силы на основных участках наступления.</p>
+    <p>План «Барбаросса» предусматривал атаку Советского Союза тремя группами армий: группа 
+      армий «Север» должна была занять Прибалтику и Ленинград, группа армий «Центр» наступала
+       через Беларусь на Москву, группа армий «Юг» должная была захватить Киев и Донбасс.</p>
+    <p>Согласно плану, война должна была закончиться к зиме 1941 года выходом немецких войск на 
+      рубеж Архангельск — Астрахань.</p>
+    <p>Утром 22 июня 1941 года Германия, нарушив договор о ненападении, напала на СССР. В 12 часов 
+      дня 22 июня советскому народу об этом по радио объявил народный комиссар иностранных дел СССР 
+      Вячеслав Михайлович Молотов. Во вторжении в СССР, кроме нацистской Германии, приняли участие её 
+      союзники – Финляндия, Румыния, Венгрия, Италия, Словакия и Хорватия.</p>
+    </div>
+   
+  </div>
+  <!-- Информационный блок о Великой Отечественной войне с ключевыми фактами и цифрами, который повторяется на всех страницах-->
+<div class="info">
+  <div class="info-text">
+    <h2>Великая Отечественная война в цифрах:</h2>
+    <p><strong> - 1418 дней длилась война</strong></p>
+    <p> Великая Отечественная война началась 22 июня 1941 года. Она продолжалась 3 года 10 месяцев и 18 дней</p>
+    <p><strong>- 1126 дней  продолжалась битва за Ленинград</strong></p>
+    <p> Самое продолжительное сражение Великой Отечественной войны</p>
+    <p><strong> - 872 дня длилась блокада Ленинграда</strong></p>
+    <p> Самая кровопролитная блокада в истории человечества</p>
+    <p><strong> - 125 блокадных хлебных грамм</strong></p>
+    <p> Столько в сутки получали дети, служащие и иждивенцы в самые суровые дни блокады Ленинграда (350 килокалорий)</p>
+    <p><strong> - 26,6 миллионов советских граждан погибли на войне</strong></p>
+    <p><strong> - более 3 миллионов человек погибло на территории БССР в годы Великой Отечественной войны</strong></p>
+    <p><strong> - 209 белорусских городов из 270 разрушено и разграблено</strong></p>
+    <p><strong> - сожжено не менее 12 348 сел и деревень</strong></p>
+  </div>
+</div>
+
+<!-- Информационный блок с контактной информацией -->
+<div class="footer-info">
+  <img src="images/content/logo_vgik_grey.jpg">
+  <div class="footer-info_text-1">
+    <strong><i class="fa-solid fa-location-dot fa-lg"></i> Адрес:</strong>
+    <p>210038, г. Витебск, ул. Терешковой ,20 ( КОРПУС 1 )</p>
+    <p>210015, г. Витебск, ул. Ленина ,8 ( КОРПУС 2 )</p>
+    <p><i class="fa-regular fa-envelope-open fa-lg"></i> mail@vgik.by</p>
+  </div> 
+  <div class="footer-info_text-2">
+    <strong>Приёмная директора:</strong>
+    <p><i class="fa-solid fa-phone-flip fa-lg"></i> 80 212 67 20 29</p>
+    <strong>Учебная часть:</strong>
+    <p><i class="fa-solid fa-phone-flip fa-lg"></i> 80 212 67 32 15</p>
+  </div> 
+</div>
+
+<!-- Нижний колонтитул с копирайтом и ссылками на соцсети -->
+<div class="footer">
+  <div class="red-line"></div>
+  <div class="footer_text">
+    <p class="copyright">&copy; <span id="year">2024</span></p>
+    <a href="https://vgik.by/" target="_blank">
+      <i class="fa-solid fa-link fa-2xl"></i>
+    </a>
+    <a href="https://www.instagram.com/vgik_vitebsk/" target="_blank">
+      <i class="fa-brands fa-instagram fa-2xl"></i>
+    </a>
+    <a href="https://www.tiktok.com/@vgik_vitebsk" target="_blank">
+      <i class="fa-brands fa-tiktok fa-2xl"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Подключение скриптов -->
+ <script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    const containerElement2 = document.querySelector(".container");
+    new ShowHide(
+      containerElement2,
+      "note_text_visible",
+      "note",
+      "button",
+      "close-button"
+    );
+  });
+</script>
+<script type="text/javascript" src="JS/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="JS/slick.min.js"></script>
+<script src="JS/glightbox.min.js"></script>
+<script type="text/javascript" src="JS/main.js"></script>
+
+</body>
+</html>

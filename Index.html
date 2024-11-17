@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>80_steps_to_Victory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Соединение с сервером шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Соединение с сервером шрифтов Google Fonts с использованием crossorigin -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik+Wet+Paint&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Подключение шрифтов Google Fonts -->
+
+    <link rel="stylesheet" type="text/css" href="CSS/slick.css" />
+    <!-- Подключение стилей для библиотеки Slick -->
+    <link rel="stylesheet" type="text/css" href="CSS/slick-theme.css" />
+    <!-- Подключение темы стилей для библиотеки Slick -->
+
+    <link rel="stylesheet" href="CSS/glightbox.css" />
+
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <!-- Подключение стилей для иконочного шрифта Font Awesome -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <!-- Подключение основных стилей сайта -->
+  </head>
+  <body>
+    <!-- 
+  Навигационный блок.
+  Этот блок включает в себя логотип, меню навигации и кнопку "Наши проекты".-->
+    <div class="navigation">
+      <!-- Ссылка на сайт учреждения образования-->
+      <a href="Index.html" class="logo_link">
+        <img src="images/content/logo_vgik-01-02.png" alt="Логотип ВГИК" />
+      </a>
+
+      <!-- Основное меню навигации -->
+      <nav class="menu">
+        <!-- Кнопка для открытия/закрытия меню на мобильных устройствах -->
+        <button class="menu_toggler" onclick="menuToggle()"></button>
+
+        <!-- Список пунктов основного меню -->
+        <ul class="menu_list">
+          <li class="menu_item">
+            <a href="Index.html" class="menu_link">Главная</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/collage.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item">
+                  <a href="vov.html">Хронология ВОВ</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="events.html">Основные события ВОВ</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="chronicle.html">Хроника освобождения Беларуси</a>
+                </li>
+                <li class="submenu_item"><a href="#">Витебск в годы ВОВ</a></li>
+                <li class="submenu_item">
+                  <a href="#">Геноцид белорусского народа в годы ВОВ</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="memories.html"
+                    >Воспоминания и рассказы участников ВОВ</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu_item">
+            <a href="test.html" class="menu_link">Задания</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/hand.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item">
+                  <a href="test.html">Викторина "ВОВ в числах"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="test.html">Кроссворд "80 шагов к Победе"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="#">Тест "Основные события ВОВ"</a>
+                </li>
+                <li class="submenu_item"><a href="#">Игра "1945"</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu_item">
+            <a href="film.html" class="menu_link">Фильмотека</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/soldier.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Солдатик"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Девочка ищет отца"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Брестская крепость"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html"
+                    >Военная драма "Мальчик в полосатой пижаме"</a
+                  >
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "А зори здесь тихие..."</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Сталинград"</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu_item">
+            <a href="about.html" class="menu_link">О нас</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/vgik.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item"><a href="about.html">О проекте</a></li>
+                <li class="submenu_item"><a href="about.html">О нас</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_item_button">
+            <a href="projects.html" class="button navigation_button menu_link"
+              >Наши проекты</a
+            >
+            <!-- Кнопка для навигации к странице "Наши проекты" -->
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 
+  Баннер на странице.
+  Этот блок включает в себя изображение и текст, представляющий основную тему сайта.
+-->
+    <div class="banner">
+      <img src="images/victory_red_flag.jpg" />
+      <div class="banner_text">
+        <h1 class="rubik-wet-paint-regular">Великой Победе - 80 лет!</h1>
+        <p>
+          информационно-образовательный ресурс, посвященный 80-летию
+          освобождения Беларуси от немецко-фашистских захватчиков и Победы
+          советского народа в Великой Отечественной войне
+        </p>
+      </div>
+    </div>
+
+    <!-- Основное содержимое страницы -->
+    <div class="topic">
+      <hr />
+      <h1>Воспоминания и рассказы участников Великой Отечественной войны</h1>
+      <div class="slider">
+        <!-- Картинки и ссылки слайдера -->
+        <div class="slide slide-1">
+          <a href="memories.html">
+            <img src="images/girl.jpg" />
+            <span class="slide_text">Страшные сны</span>
+          </a>
+        </div>
+        <div class="slide slide-2">
+          <a href="memories.html">
+            <img src="images/vov.jpg" />
+            <span class="slide_text">Только не было бы войны</span>
+          </a>
+        </div>
+        <div class="slide slide-3">
+          <a href="memories.html">
+            <img src="images/1946.jpg" />
+            <span class="slide_text">Тяжелые пятерки</span>
+          </a>
+        </div>
+        <div class="slide slide-4">
+          <a href="memories.html">
+            <img src="images/1945.jpg" />
+            <span class="slide_text">Мы не ждали благодарностей..</span>
+          </a>
+        </div>
+        <div class="slide slide-5">
+          <a href="memories.html">
+            <img src="images/1943.jpg" />
+            <span class="slide_text">Сила духа</span>
+          </a>
+        </div>
+        <div class="slide slide-6">
+          <a href="memories.html">
+            <img src="images/1944.jpg" />
+            <span class="slide_text">Синий платочек</span>
+          </a>
+        </div>
+        <div class="slide slide-7">
+          <a href="memories.html">
+            <img src="images/brest.jpg" />
+            <span class="slide_text">Брестская крепость</span>
+          </a>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="topic-1">
+        <img
+          src="images/vov.jpg"
+          alt="Изображение Великой Отечественной войны"
+        />
+        <div class="topic-1_text">
+          <h2>Хронология Великой Отечественной войны</h2>
+          <p>
+            Тема охватывает всесторонний анализ крупного военного конфликта,
+            начиная с его предпосылок и первых этапов. Внимание уделяется
+            основным этапам войны, ключевым сражениям и военным операциям, а
+            также важным датам и событиям, которые стали поворотными моментами в
+            ходе боевых действий. Отдельный акцент сделан на героизме и подвигах
+            народа, проявленных в самые тяжёлые времена. Также рассматриваются
+            международные аспекты конфликта, влияющие на ход войны и её исход.
+            Итоги войны и её последствия изучаются с точки зрения политических,
+            экономических и социальных изменений, вызванных этим событием.
+            Завершает исследование обсуждение памяти и наследия войны, как она
+            сохранилась в общественном сознании и культуре.
+          </p>
+          <a href="vov.html" class="button">Читать</a>
+        </div>
+      </div>
+      <hr />
+      <div class="topic-2">
+        <div class="topic-2_text">
+          <h2>Основные события Великой Отечественной войны</h2>
+          <p>
+            Этот раздел посвящен ключевым событиям Великой Отечественной войны
+            (1941-1945), которые сыграли решающую роль в победе над нацистской
+            Германией. Подробные описания сражений, стратегических операций,
+            героических подвигов и важных дат, которые навсегда изменили ход
+            мировой истории. Узнайте о героическом сопротивлении советского
+            народа, значимых военных достижениях и памятных событиях, оставивших
+            неизгладимый след в памяти человечества."
+          </p>
+          <a href="events.html" class="button">Читать</a>
+        </div>
+        <img src="images/mainevents.jpg" />
+      </div>
+      <hr />
+      <div class="topic-3">
+        <img src="images/belvov (1).jpg" />
+        <div class="topic-3_text">
+          <h2>Хроника освобождения Беларуси</h2>
+          <p>
+            Тема охватывает предпосылки и начало войны, уделяя внимание причинам
+            конфликта и первым шагам его развертывания. Анализируются основные
+            этапы войны, показывающие динамику развития военных действий.
+            Рассмотрены ключевые сражения и операции, которые стали переломными
+            моментами. Особое внимание уделяется важным датам и событиям,
+            определяющим ход войны. Отмечены примеры героизма и подвигов народа,
+            сыгравших значительную роль в сопротивлении. Обозначены
+            международные аспекты, включая влияние на отношения между странами и
+            глобальную политику. Последствия войны рассматриваются в контексте
+            политических, экономических и социальных изменений. Завершает работу
+            обсуждение памяти и наследия войны, их сохранения в культурном и
+            историческом контексте.
+          </p>
+          <a href="chronicle.html" class="button">Читать</a>
+        </div>
+      </div>
+      <hr />
+      <div class="topic-4">
+        <div class="topic-4_text">
+          <h2>Витебск в годы Великой Отечественной войны</h2>
+          <p>
+            Этот раздел о Витебске в годы Великой Отечественной войны.
+            Исследование охватывает период оккупации города немецкими войсками,
+            начиная с его захвата и заканчивая освобождением. Рассматриваются
+            ключевые события и важные даты, связанные с оккупацией и боями за
+            Витебск. Анализируются военные операции, в которых город играл
+            стратегическую роль. Особое внимание уделяется героизму и
+            сопротивлению местного населения, включая действия партизан и
+            подпольных организаций. Изучаются последствия оккупации и боевых
+            действий для города и его жителей, в том числе материальные
+            разрушения и человеческие потери. Завершается работа обсуждением
+            памяти о военных годах в Витебске и сохранения исторического
+            наследия, включающего памятники, музеи и мероприятия, посвящённые
+            подвигам и трагедиям этого периода.
+          </p>
+          <a href="#" class="button">Читать</a>
+        </div>
+        <img
+          src="images/1946.jpg"
+          alt="Изображение Великой Отечественной войны"
+        />
+      </div>
+      <hr />
+      <div class="topic-5">
+        <img src="images/girl.jpg" />
+        <div class="topic-5_text">
+          <h2>
+            Геноцид белорусского народа в годы Великой Отечественной войны
+          </h2>
+          <p>
+            Тема посвящена изучению геноцида белорусского народа в годы Великой
+            Отечественной войны. Рассматриваются причины и предпосылки массовых
+            репрессий, проводимых нацистским режимом на территории Беларуси.
+            Анализируются этапы проведения карательных операций, методы и
+            масштабы уничтожения мирного населения. Особое внимание уделяется
+            ключевым событиям и датам, ставшим символами трагедии белорусского
+            народа. Исследуются примеры героизма и сопротивления местных
+            жителей, а также действия партизанского движения. В работе также
+            затрагиваются международные аспекты, включая реакцию мирового
+            сообщества на происходящие события. Последствия геноцида оцениваются
+            с точки зрения демографических, социальных и культурных потерь.
+            Завершается исследование обсуждением памяти и наследия трагедии, их
+            отражения в историческом и культурном контексте.
+          </p>
+          <a href="#" class="button">Читать</a>
+        </div>
+      </div>
+    </div>
+    <!-- Информационный блок о Великой Отечественной войне с ключевыми фактами и цифрами, который повторяется на всех страницах-->
+    <div class="info">
+      <div class="info-text">
+        <h2>Великая Отечественная война в цифрах:</h2>
+        <p><strong> - 1418 дней длилась война</strong></p>
+        <p>
+          Великая Отечественная война началась 22 июня 1941 года. Она
+          продолжалась 3 года 10 месяцев и 18 дней
+        </p>
+        <p><strong>- 1126 дней продолжалась битва за Ленинград</strong></p>
+        <p>Самое продолжительное сражение Великой Отечественной войны</p>
+        <p><strong> - 872 дня длилась блокада Ленинграда</strong></p>
+        <p>Самая кровопролитная блокада в истории человечества</p>
+        <p><strong> - 125 блокадных хлебных грамм</strong></p>
+        <p>
+          Столько в сутки получали дети, служащие и иждивенцы в самые суровые
+          дни блокады Ленинграда (350 килокалорий)
+        </p>
+        <p>
+          <strong> - 26,6 миллионов советских граждан погибли на войне</strong>
+        </p>
+        <p>
+          <strong>
+            - более 3 миллионов человек погибло на территории БССР в годы
+            Великой Отечественной войны</strong
+          >
+        </p>
+        <p>
+          <strong>
+            - 209 белорусских городов из 270 разрушено и разграблено</strong
+          >
+        </p>
+        <p><strong> - сожжено не менее 12 348 сел и деревень</strong></p>
+      </div>
+    </div>
+
+    <!-- Информационный блок с контактной информацией -->
+    <div class="footer-info">
+      <img src="images/content/logo_vgik_grey.jpg" />
+      <div class="footer-info_text-1">
+        <strong><i class="fa-solid fa-location-dot fa-lg"></i> Адрес:</strong>
+        <p>210038, г. Витебск, ул. Терешковой ,20 ( КОРПУС 1 )</p>
+        <p>210015, г. Витебск, ул. Ленина ,8 ( КОРПУС 2 )</p>
+        <p>
+          <i class="fa-regular fa-envelope-open fa-lg"></i>
+          <a href="mailto:mail@vgik.by">mail@vgik.by</a>
+        </p>
+      </div>
+      <div class="footer-info_text-2">
+        <strong>Приёмная директора:</strong>
+        <p>
+          <i class="fa-solid fa-phone-flip fa-lg"></i>
+          <a href="tel:+80212672029">80 212 67 20 29</a>
+        </p>
+        <strong>Учебная часть:</strong>
+        <p>
+          <i class="fa-solid fa-phone-flip fa-lg"></i>
+          <a href="tel:+80212673215">80 212 67 32 15</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Нижний колонтитул с копирайтом и ссылками на соцсети -->
+    <div class="footer">
+      <div class="red-line"></div>
+      <div class="footer_text">
+        <p class="copyright">&copy; <span id="year">2024</span></p>
+        <a href="https://vgik.by/" target="_blank">
+          <i class="fa-solid fa-link fa-2xl"></i>
+        </a>
+        <a href="https://www.instagram.com/vgik_vitebsk/" target="_blank">
+          <i class="fa-brands fa-instagram fa-2xl"></i>
+        </a>
+        <a href="https://www.tiktok.com/@vgik_vitebsk" target="_blank">
+          <i class="fa-brands fa-tiktok fa-2xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script type="text/javascript" src="JS/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="JS/slick.min.js"></script>
+    <script src="JS/glightbox.min.js"></script>
+    <script type="text/javascript" src="JS/main.js"></script>
+  </body>
+</html>

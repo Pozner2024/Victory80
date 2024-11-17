@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>80_steps_to_Victory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Соединение с сервером шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Соединение с сервером шрифтов Google Fonts с использованием crossorigin -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik+Wet+Paint&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Подключение шрифтов Google Fonts -->
+
+    <link rel="stylesheet" type="text/css" href="CSS/slick.css" />
+    <!-- Подключение стилей для библиотеки Slick -->
+    <link rel="stylesheet" type="text/css" href="CSS/slick-theme.css" />
+    <!-- Подключение темы стилей для библиотеки Slick -->
+
+    <link rel="stylesheet" href="CSS/glightbox.min.css" />
+
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <!-- Подключение стилей для иконочного шрифта Font Awesome -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <!-- Подключение основных стилей сайта -->
+  </head>
+  <body>
+    <!-- 
+  Навигационный блок.
+  Этот блок включает в себя логотип, меню навигации и кнопку "Наши проекты".-->
+    <div class="navigation">
+      <!-- Ссылка на сайт учреждения образования-->
+      <a href="https://vgik.by/" target="_blank" class="logo_link">
+        <img src="images/content/logo_vgik-01-02.png" alt="Логотип ВГИК" />
+      </a>
+
+      <!-- Основное меню навигации -->
+      <nav class="menu">
+        <!-- Кнопка для открытия/закрытия меню на мобильных устройствах -->
+        <button class="menu_toggler" onclick="menuToggle()"></button>
+
+        <!-- Список пунктов основного меню -->
+        <ul class="menu_list">
+          <li class="menu_item">
+            <a href="Index.html" class="menu_link">Главная</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/collage.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item">
+                  <a href="vov.html">Хронология ВОВ</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="events.html">Основные события ВОВ</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="chronicle.html">Хроника освобождения Беларуси</a>
+                </li>
+                <li class="submenu_item"><a href="#">Витебск в годы ВОВ</a></li>
+                <li class="submenu_item">
+                  <a href="#">Геноцид белорусского народа в годы ВОВ</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="memories.html"
+                    >Воспоминания и рассказы участников ВОВ</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu_item">
+            <a href="test.html" class="menu_link">Задания</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/hand.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item">
+                  <a href="test.html">Викторина "ВОВ в числах"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="test.html">Кроссворд "80 шагов к Победе"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="#">Тест "Основные события ВОВ"</a>
+                </li>
+                <li class="submenu_item"><a href="#">Игра "1945"</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu_item">
+            <a href="film.html" class="menu_link">Фильмотека</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/soldier.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Солдатик"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Девочка ищет отца"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Брестская крепость"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html"
+                    >Военная драма "Мальчик в полосатой пижаме"</a
+                  >
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "А зори здесь тихие..."</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Сталинград"</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu_item">
+            <a href="about.html" class="menu_link">О нас</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/vgik.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item"><a href="about.html">О проекте</a></li>
+                <li class="submenu_item"><a href="about.html">О нас</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu_item_button">
+            <a href="#" class="button navigation_button menu_link"
+              >Наши проекты</a
+            >
+            <!-- Кнопка для навигации к странице "Наши проекты" -->
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="banner_title">
+      <h1>Наши проекты</h1>
+      <hr class="centered-line" />
+    </div>
+
+    <div class="project-container">
+      <div class="project-1">
+        <div class="project-1_text">
+          <h2>Экспозиция "Стена памяти"</h2>
+          <p>
+            Выставка "Стена памяти" представляет собой уникальную коллекцию,
+            созданную учащимися и педагогами колледжа, посвящённую ntvt Великой
+            Отечественной войнs. Экспонаты отражают глубокую связь поколений и
+            бережное отношение к истории. В фотогалерее представлены макеты,
+            рисунки, фотографии и инсталляции, которые воссоздают ключевые
+            моменты военных лет, передают дух и мужество людей того времени. Эта
+            выставка – образовательный проект, сохраняющий память о героическое
+            прошлом нашей страны.
+          </p>
+        </div>
+        <div class="project-1_gallery">
+          <a
+            href="images/1945.jpg"
+            class="glightbox"
+            data-glightbox="title: Суворов Ф.М.;
+     description:Суворов Ф.М. Детская фотография дедушки Иванова Ивана, учащегося 11-21 группы Суворов Ф.М. Детская фотография дедушки Иванова Ивана, 
+     учащегося  учащегося 11-21 гушки Иванова Ивана, учащегося 11-21 группы Суворов Ф.М. Детская фотография дедушки Иванова Ивана, учащегося 11-21 группы"
+          >
+            <img src="images/small_1945.jpg" alt="Image 1" />
+          </a>
+          <a
+            href="images/1946.jpg"
+            class="glightbox"
+            data-glightbox="title: Витебск в 1945 году; 
+    description: Уникальный снимок восстановления Витебска в 1945 году. Снимок из семейного архива учащегося Петрова А."
+          >
+            <img src="images/small_1946.jpg" alt="Image 2" />
+          </a>
+          <a
+            href="images/mag.JPG"
+            class="glightbox"
+            data-glightbox="title: Трофейная кружка; 
+    description: Трофейная кружка. Кружка дедушки Сидорова Н.сохранившаяся со времен ВОВ "
+          >
+            <img src="images/small_mag.jpg" alt="Image 4" />
+          </a>
+          <a
+            href="images/bagrat.jpg"
+            class="glightbox"
+            data-glightbox="title: Военная техника; 
+    description: Боевая техника, применявшаяся в период с 1940-1945г. Фото из семейного архива Капустина М.С."
+          >
+            <img src="images/small_bagrat.jpg" alt="Image 3" />
+          </a>
+        </div>
+        <details>
+          <summary>Смотреть больше фото</summary>
+          <div class="project-1_gallery">
+            <a
+              href="images/grandma.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки;
+       description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_grandma.jpg" alt="Image 1" />
+            </a>
+            <a
+              href="images/grandma2.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки; 
+      description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_greandma2.jpg" alt="Image 2" />
+            </a>
+            <a
+              href="images/grandma3.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки; 
+      description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_greandma3.jpg" alt="Image 4" />
+            </a>
+            <a
+              href="images/girl2.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки; 
+      description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_girl2.jpg" alt="Image 2" />
+            </a>
+          </div>
+        </details>
+      </div>
+
+      <hr class="centered-line" />
+
+      <div class="project-2">
+        <div class="project-2_text">
+          <h2>Инсталяция "Детство опаленное войной"</h2>
+          <p>
+            Проект "Детство опаленное войной" представляет собой комплексную
+            инициативу, направленную на увековечение памяти о геноциде
+            белорусского народа во время Второй мировой войны. В рамках проекта
+            была создана электронная библиотека, в которой собрали обширную
+            коллекцию материалов о трагических событиях того времени, с особым
+            акцентом на судьбы детей, прошедших через концлагеря. Также была
+            создана инсталляция, состоящая из кукол, изображающих детей в
+            полосатой робе за колючей проволокой, символизирующей жестокость и
+            страдания, пережитые малолетними узниками. Проект стремился к тому,
+            чтобы сохранить историческую память и повысить осведомленность
+            общественности о страшных страницах истории, акцентируя внимание на
+            наиболее уязвимой и пострадавшей части населения — детях.
+          </p>
+        </div>
+        <div class="project-2_gallery">
+          <a
+            href="images/pri.jpg"
+            class="glightbox"
+            data-glightbox="title: Контрационный лагерь Тростинец;
+       description: Фотография детей в Контрационном лагере Тростинец"
+          >
+            <img src="images/small_prisoners.jpg" alt="Image 1" />
+          </a>
+          <a
+            href="images/girl2.jpg"
+            class="glightbox"
+            data-glightbox="title: Иванова Мария; 
+      description: Детский снимок Марии Ивановой, выжившей в контрационном лагере Берёза-Картузская"
+          >
+            <img src="images/small_girl2.jpg" alt="Image 2" />
+          </a>
+          <a
+            href="images/kids.jpg"
+            class="glightbox"
+            data-glightbox="title: Семейное фото; 
+      description: Семейное фото братьев и сестры Петровых, погибших в контрационном лагере Азаричи "
+          >
+            <img src="images/small_kids.jpg" alt="Image 4" />
+          </a>
+        </div>
+        <details>
+          <summary>Смотреть больше фото</summary>
+          <div class="project-2_gallery">
+            <a
+              href="images/grandma.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки;
+         description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_grandma.jpg" alt="Image 1" />
+            </a>
+            <a
+              href="images/grandma2.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки; 
+        description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_greandma2.jpg" alt="Image 2" />
+            </a>
+            <a
+              href="images/grandma3.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки; 
+        description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_greandma3.jpg" alt="Image 4" />
+            </a>
+          </div>
+        </details>
+      </div>
+
+      <hr class="centered-line" />
+      <div class="project-3">
+        <div class="project-3_text">
+          <h2>Фотокнига "Мои бабушка и дедушка - дети войны</h2>
+          <p>
+            Фотокнига "Мои бабушка и дедушка - дети войны" – это трогательный
+            проект, посвященный воспоминаниям о Великой Отечественной войне. В
+            ней собраны уникальные фотографии и истории родственников учащихся
+            колледжа, переживших войну в детстве. Книга бережно хранит память о
+            тех, кто в юном возрасте испытал все тяготы и лишения военного
+            времени.
+          </p>
+        </div>
+        <div class="project-3_gallery">
+          <a
+            href="images/grandma.jpg"
+            class="glightbox"
+            data-glightbox="title: Детские снимки;
+       description: Детские снимки бабушки и дедушки семьи Ивановых"
+          >
+            <img src="images/small_grandma.jpg" alt="Image 1" />
+          </a>
+          <a
+            href="images/grandma2.jpg"
+            class="glightbox"
+            data-glightbox="title: Детские снимки; 
+      description: Детские снимки бабушки и дедушки семьи Ивановых"
+          >
+            <img src="images/small_greandma2.jpg" alt="Image 2" />
+          </a>
+          <a
+            href="images/grandma3.jpg"
+            class="glightbox"
+            data-glightbox="title: Детские снимки; 
+      description: Детские снимки бабушки и дедушки семьи Ивановых"
+          >
+            <img src="images/small_greandma3.jpg" alt="Image 4" />
+          </a>
+          <a
+            href="images/girl2.jpg"
+            class="glightbox"
+            data-glightbox="title: Детские снимки; 
+      description: Детские снимки бабушки и дедушки семьи Ивановых"
+          >
+            <img src="images/small_girl2.jpg" alt="Image 2" />
+          </a>
+        </div>
+        <details>
+          <summary>Смотреть больше фото</summary>
+          <div class="project-3_gallery">
+            <a
+              href="images/grandma.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки;
+           description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_grandma.jpg" alt="Image 1" />
+            </a>
+            <a
+              href="images/grandma2.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки; 
+          description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_greandma2.jpg" alt="Image 2" />
+            </a>
+            <a
+              href="images/grandma3.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки; 
+          description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_greandma3.jpg" alt="Image 4" />
+            </a>
+            <a
+              href="images/grandma.jpg"
+              class="glightbox"
+              data-glightbox="title: Детские снимки;
+           description: Детские снимки бабушки и дедушки семьи Ивановых"
+            >
+              <img src="images/small_grandma.jpg" alt="Image 1" />
+            </a>
+          </div>
+        </details>
+      </div>
+
+      <hr class="centered-line" />
+      <div class="project-4">
+        <div class="project-4_text">
+          <h2>Проект "Галерея памяти"</h2>
+          <p>
+            Проект "Галерея памяти" – это уникальная экспозиция, посвященная
+            героям Великой Отечественной войны. В рамках проекта собраны
+            портреты участников войны, их биографии и подвиги. "Галерея памяти"
+            призвана увековечить воспоминания о героических поступках и
+            сохранить историческую память для будущих поколений.
+          </p>
+        </div>
+        <div class="project-4_gallery">
+          <a
+            href="images/man1.jpg"
+            class="glightbox"
+            data-glightbox="title: Константин Константинович Рокоссовский;
+       description: Константин Константинович Рокоссовский"
+          >
+            <img src="images/small_man1.jpg" alt="Image 1" />
+          </a>
+          <a
+            href="images/man2.jpg"
+            class="glightbox"
+            data-glightbox="title: Георгий Фёдорович Захаров; 
+      description: Георгий Фёдорович Захаров"
+          >
+            <img src="images/small_man2.jpg" alt="Image 2" />
+          </a>
+          <a
+            href="images/man3.jpg"
+            class="glightbox"
+            data-glightbox="title: Иван Христофорович Баграмян; 
+      description: Иван Христофорович Баграмян"
+          >
+            <img src="images/small_man3.jpg" alt="Image 4" />
+          </a>
+        </div>
+        <details>
+          <summary>Смотреть больше фото</summary>
+          <div class="project-4_gallery">
+            <a
+              href="images/man1.jpg"
+              class="glightbox"
+              data-glightbox="title: Константин Константинович Рокоссовский;
+       description: Константин Константинович Рокоссовский"
+            >
+              <img src="images/small_man1.jpg" alt="Image 1" />
+            </a>
+            <a
+              href="images/man2.jpg"
+              class="glightbox"
+              data-glightbox="title: Георгий Фёдорович Захаров; 
+      description: Георгий Фёдорович Захаров"
+            >
+              <img src="images/small_man2.jpg" alt="Image 2" />
+            </a>
+            <a
+              href="images/man3.jpg"
+              class="glightbox"
+              data-glightbox="title: Иван Христофорович Баграмян; 
+      description: Иван Христофорович Баграмян"
+            >
+              <img src="images/small_man3.jpg" alt="Image 4" />
+            </a>
+          </div>
+        </details>
+      </div>
+    </div>
+    <!-- Информационный блок о Великой Отечественной войне с ключевыми фактами и цифрами, который повторяется на всех страницах-->
+    <div class="info">
+      <div class="info-text">
+        <h2>Великая Отечественная война в цифрах:</h2>
+        <p><strong> - 1418 дней длилась война</strong></p>
+        <p>
+          Великая Отечественная война началась 22 июня 1941 года. Она
+          продолжалась 3 года 10 месяцев и 18 дней
+        </p>
+        <p><strong>- 1126 дней продолжалась битва за Ленинград</strong></p>
+        <p>Самое продолжительное сражение Великой Отечественной войны</p>
+        <p><strong> - 872 дня длилась блокада Ленинграда</strong></p>
+        <p>Самая кровопролитная блокада в истории человечества</p>
+        <p><strong> - 125 блокадных хлебных грамм</strong></p>
+        <p>
+          Столько в сутки получали дети, служащие и иждивенцы в самые суровые
+          дни блокады Ленинграда (350 килокалорий)
+        </p>
+        <p>
+          <strong> - 26,6 миллионов советских граждан погибли на войне</strong>
+        </p>
+        <p>
+          <strong>
+            - более 3 миллионов человек погибло на территории БССР в годы
+            Великой Отечественной войны</strong
+          >
+        </p>
+        <p>
+          <strong>
+            - 209 белорусских городов из 270 разрушено и разграблено</strong
+          >
+        </p>
+        <p><strong> - сожжено не менее 12 348 сел и деревень</strong></p>
+      </div>
+    </div>
+    <!-- Информационный блок с контактной информацией -->
+    <div class="footer-info">
+      <img src="images/content/logo_vgik_grey.jpg" />
+      <div class="footer-info_text-1">
+        <strong><i class="fa-solid fa-location-dot fa-lg"></i> Адрес:</strong>
+        <p>210038, г. Витебск, ул. Терешковой ,20 ( КОРПУС 1 )</p>
+        <p>210015, г. Витебск, ул. Ленина ,8 ( КОРПУС 2 )</p>
+        <p><i class="fa-regular fa-envelope-open fa-lg"></i> mail@vgik.by</p>
+      </div>
+      <div class="footer-info_text-2">
+        <strong>Приёмная директора:</strong>
+        <p><i class="fa-solid fa-phone-flip fa-lg"></i> 80 212 67 20 29</p>
+        <strong>Учебная часть:</strong>
+        <p><i class="fa-solid fa-phone-flip fa-lg"></i> 80 212 67 32 15</p>
+      </div>
+    </div>
+
+    <!-- Нижний колонтитул с копирайтом и ссылками на соцсети -->
+    <div class="footer">
+      <div class="red-line"></div>
+      <div class="footer_text">
+        <p class="copyright">&copy; <span id="year">2024</span></p>
+        <a href="https://vgik.by/" target="_blank">
+          <i class="fa-solid fa-link fa-2xl" style="color: #da0909"></i>
+        </a>
+        <a href="https://www.instagram.com/vgik_vitebsk/" target="_blank">
+          <i class="fa-brands fa-instagram fa-2xl" style="color: #da0909"></i>
+        </a>
+        <a href="https://www.tiktok.com/@vgik_vitebsk" target="_blank">
+          <i class="fa-brands fa-tiktok fa-2xl" style="color: #da0909"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script type="text/javascript" src="JS/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="JS/slick.min.js"></script>
+    <script src="JS/glightbox.min.js"></script>
+    <script type="text/javascript" src="JS/main.js"></script>
+  </body>
+</html>

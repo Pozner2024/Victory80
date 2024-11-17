@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>80_steps_to_Victory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Соединение с сервером шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Соединение с сервером шрифтов Google Fonts с использованием crossorigin -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik+Wet+Paint&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Подключение шрифтов Google Fonts -->
+
+    <link rel="stylesheet" type="text/css" href="CSS/slick.css" />
+    <!-- Подключение стилей для библиотеки Slick -->
+    <link rel="stylesheet" type="text/css" href="CSS/slick-theme.css" />
+    <!-- Подключение темы стилей для библиотеки Slick -->
+
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <!-- Подключение стилей для иконочного шрифта Font Awesome -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <!-- Подключение основных стилей сайта -->
+  </head>
+  <body>
+    <!-- 
+  Навигационный блок.
+  Этот блок включает в себя логотип, меню навигации и кнопку "Наши проекты".-->
+    <div class="navigation">
+      <!-- Ссылка на сайт учреждения образования-->
+      <a href="https://vgik.by/" target="_blank" class="logo_link">
+        <img src="images/content/logo_vgik-01-02.png" alt="Логотип ВГИК" />
+      </a>
+
+      <!-- Основное меню навигации -->
+      <nav class="menu">
+        <!-- Кнопка для открытия/закрытия меню на мобильных устройствах -->
+        <button class="menu_toggler" onclick="menuToggle()"></button>
+
+        <!-- Список пунктов основного меню -->
+        <ul class="menu_list">
+          <li class="menu_item">
+            <a href="Index.html" class="menu_link">Главная</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/collage.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item">
+                  <a href="vov.html">Хронология ВОВ</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="events.html">Основные события ВОВ</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="chronicle.html">Хроника освобождения Беларуси</a>
+                </li>
+                <li class="submenu_item"><a href="#">Витебск в годы ВОВ</a></li>
+                <li class="submenu_item">
+                  <a href="#">Геноцид белорусского народа в годы ВОВ</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="memories.html"
+                    >Воспоминания и рассказы участников ВОВ</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu_item">
+            <a href="test.html" class="menu_link">Задания</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/hand.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item">
+                  <a href="test.html">Викторина "ВОВ в числах"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="test.html">Кроссворд "80 шагов к Победе"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="#">Тест "Основные события ВОВ"</a>
+                </li>
+                <li class="submenu_item"><a href="#">Игра "1945"</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu_item">
+            <a href="film.html" class="menu_link">Фильмотека</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/soldier.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Солдатик"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Девочка ищет отца"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Брестская крепость"</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html"
+                    >Военная драма "Мальчик в полосатой пижаме"</a
+                  >
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "А зори здесь тихие..."</a>
+                </li>
+                <li class="submenu_item">
+                  <a href="film.html">Военная драма "Сталинград"</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu_item">
+            <a href="about.html" class="menu_link">О нас</a>
+            <div class="menu_dropdown">
+              <div class="submenu-image">
+                <img src="images/vgik.jpg" />
+              </div>
+              <ul class="submenu">
+                <li class="submenu_item"><a href="about.html">О проекте</a></li>
+                <li class="submenu_item"><a href="about.html">О нас</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="banner_title">
+      <h1>Воспоминания и рассказы участников Великой Отечественной войны</h1>
+      <hr class="centered-line" />
+    </div>
+    <div class="main">
+      <p>
+        <strong
+          >Самые ценные истории не в книгах, а в сердцах наших предков.
+          Погрузитесь в атмосферу Великой Отечественной войны через глаза тех,
+          кто её пережил. На этой странице вы найдете трогательные рассказы
+          очевидцев, которые позволят вам ощутить всю значимость тех событий.
+          Добро пожаловать в мир истории, рассказанной теми, кто её
+          создал</strong
+        >
+      </p>
+      <div class="main_text">
+        <h2>Lorem ipsum</h2>
+        <img src="images/girl.jpg" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          consequat pellentesque nisl eu lacinia. Vivamus et tincidunt lorem.
+          Vivamus quis ullamcorper nibh. Phasellus fermentum elementum
+          tincidunt. Aliquam id accumsan dui. Pellentesque vel sodales elit,
+          eget sodales dui. Aenean sit amet ornare ligula, eget porta dolor. Sed
+          bibendum accumsan sapien, sed hendrerit tortor semper in. Curabitur
+          non justo a ligula euismod porta in ullamcorper dui. Fusce et sagittis
+          mauris. Donec nec maximus felis, quis suscipit purus. Nunc et
+          venenatis diam, sed volutpat leo. Sed at dolor at tortor sollicitudin
+          venenatis et a dolor. Suspendisse potenti. Sed tempor, eros id dictum
+          efficitur, erat erat luctus massa, quis mollis nulla sapien ac nunc.
+          Fusce sodales elementum maximus. Maecenas iaculis blandit metus vel
+          sodales. Vivamus eu dapibus tellus. Nam magna odio, placerat et arcu
+          quis, venenatis imperdiet metus. In fermentum nec ante et fermentum.
+          Nulla tristique convallis porta. Nunc sit amet tristique libero.
+          Aenean bibendum consectetur nunc, id efficitur nisl finibus a. Nulla
+          convallis leo ut leo cursus, in molestie nibh viverra. Phasellus at
+          nisi tellus. Nam diam nibh, egestas vulputate nisl et, condimentum
+          interdum metus. Vestibulum bibendum vitae enim vel condimentum.
+          Quisque suscipit lectus vitae elit varius, sit amet feugiat velit
+          luctus. Donec non ante mattis, interdum magna in, tristique quam.
+          Pellentesque finibus finibus odio quis mollis. Duis et urna et mauris
+          interdum iaculis. Ut at eros a risus rutrum dapibus. Proin quis
+          pretium mauris. Vestibulum a ante accumsan, viverra dolor ac,
+          convallis tortor. In finibus ut justo id rhoncus. Quisque vel suscipit
+          quam, in laoreet est. Nunc facilisis finibus rhoncus.
+        </p>
+        <button class="main_button"><strong>Читать дальше</strong></button>
+        <div class="extra-text">
+          <button class="main_close-button">&times;</button>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            consequat pellentesque nisl eu lacinia. Vivamus et tincidunt lorem.
+            Vivamus quis ullamcorper nibh. Phasellus fermentum elementum
+            tincidunt. Aliquam id accumsan dui. Pellentesque vel sodales elit,
+            eget sodales dui. Aenean sit amet ornare ligula, eget porta dolor.
+            Sed bibendum accumsan sapien, sed hendrerit tortor semper in.
+            Curabitur non justo a ligula euismod porta in ullamcorper dui. Fusce
+            et sagittis mauris. Donec nec maximus felis, quis suscipit purus.
+            Nunc et venenatis diam, sed volutpat leo. Sed at dolor at tortor
+            sollicitudin venenatis et a dolor. Suspendisse potenti. Sed tempor,
+            eros id dictum efficitur, erat erat luctus massa, quis mollis nulla
+            sapien ac nunc. Fusce sodales elementum maximus. Maecenas iaculis
+            blandit metus vel sodales. Vivamus eu dapibus tellus. Nam magna
+            odio, placerat et arcu quis, venenatis imperdiet metus. In fermentum
+            nec ante et fermentum. quam, in laoreet est. Nunc facilisis finibus
+            rhoncus.
+          </p>
+        </div>
+      </div>
+
+      <div class="main_text">
+        <h2>Lorem ipsum</h2>
+        <img src="images/girl.jpg" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          consequat pellentesque nisl eu lacinia. Vivamus et tincidunt lorem.
+          Vivamus quis ullamcorper nibh. Phasellus fermentum elementum
+          tincidunt. Aliquam id accumsan dui. Pellentesque vel sodales elit,
+          eget sodales dui. Aenean sit amet ornare ligula, eget porta dolor. Sed
+          bibendum accumsan sapien, sed hendrerit tortor semper in. Curabitur
+          non justo a ligula euismod porta in ullamcorper dui. Fusce et sagittis
+          mauris. Donec nec maximus felis, quis suscipit purus. Nunc et
+          venenatis diam, sed volutpat leo. Sed at dolor at tortor sollicitudin
+          venenatis et a dolor. Suspendisse potenti. Sed tempor, eros id dictum
+          efficitur, erat erat luctus massa, quis mollis nulla sapien ac nunc.
+          Fusce sodales elementum maximus. Maecenas iaculis blandit metus vel
+          sodales. Vivamus eu dapibus tellus. Nam magna odio, placerat et arcu
+          quis, venenatis imperdiet metus. In fermentum nec ante et fermentum.
+          Nulla tristique convallis porta. Nunc sit amet tristique libero.
+          Aenean bibendum consectetur nunc, id efficitur nisl finibus a. Nulla
+          convallis leo ut leo cursus, in molestie nibh viverra. Phasellus at
+          nisi tellus. Nam diam nibh, egestas vulputate nisl et, condimentum
+          interdum metus. Vestibulum bibendum vitae enim vel condimentum.
+          Quisque suscipit lectus vitae elit varius, sit amet feugiat velit
+          luctus. Donec non ante mattis, interdum magna in, tristique quam.
+          Pellentesque finibus finibus odio quis mollis. Duis et urna et mauris
+          interdum iaculis. Ut at eros a risus rutrum dapibus. Proin quis
+          pretium mauris. Vestibulum a ante accumsan, viverra dolor ac,
+          convallis tortor. In finibus ut justo id rhoncus. Quisque vel suscipit
+          quam, in laoreet est. Nunc facilisis finibus rhoncus.
+        </p>
+        <button class="main_button"><strong>Читать дальше</strong></button>
+        <div class="extra-text">
+          <button class="main_close-button">&times;</button>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            consequat pellentesque nisl eu lacinia. Vivamus et tincidunt lorem.
+            Vivamus quis ullamcorper nibh. Phasellus fermentum elementum
+            tincidunt. Aliquam id accumsan dui. Pellentesque vel sodales elit,
+            eget sodales dui. Aenean sit amet ornare ligula, eget porta dolor.
+            Sed bibendum accumsan sapien, sed hendrerit tortor semper in.
+            Curabitur non justo a ligula euismod porta in ullamcorper dui. Fusce
+            et sagittis mauris. Donec nec maximus felis, quis suscipit purus.
+            Nunc et venenatis diam, sed volutpat leo. Sed at dolor at tortor
+            sollicitudin venenatis et a dolor. Suspendisse potenti. Sed tempor,
+            eros id dictum efficitur, erat erat luctus massa, quis mollis nulla
+            sapien ac nunc. Fusce sodales elementum maximus. Maecenas iaculis
+            blandit metus vel sodales. Vivamus eu dapibus tellus. Nam magna
+            odio, placerat et arcu quis, venenatis imperdiet metus. In fermentum
+            nec ante et fermentum. quam, in laoreet est. Nunc facilisis finibus
+            rhoncus.
+          </p>
+        </div>
+      </div>
+
+      <div class="main_text">
+        <h2>Lorem ipsum</h2>
+        <img src="images/girl.jpg" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          consequat pellentesque nisl eu lacinia. Vivamus et tincidunt lorem.
+          Vivamus quis ullamcorper nibh. Phasellus fermentum elementum
+          tincidunt. Aliquam id accumsan dui. Pellentesque vel sodales elit,
+          eget sodales dui. Aenean sit amet ornare ligula, eget porta dolor. Sed
+          bibendum accumsan sapien, sed hendrerit tortor semper in. Curabitur
+          non justo a ligula euismod porta in ullamcorper dui. Fusce et sagittis
+          mauris. Donec nec maximus felis, quis suscipit purus. Nunc et
+          venenatis diam, sed volutpat leo. Sed at dolor at tortor sollicitudin
+          venenatis et a dolor. Suspendisse potenti. Sed tempor, eros id dictum
+          efficitur, erat erat luctus massa, quis mollis nulla sapien ac nunc.
+          Fusce sodales elementum maximus. Maecenas iaculis blandit metus vel
+          sodales. Vivamus eu dapibus tellus. Nam magna odio, placerat et arcu
+          quis, venenatis imperdiet metus. In fermentum nec ante et fermentum.
+          Nulla tristique convallis porta. Nunc sit amet tristique libero.
+          Aenean bibendum consectetur nunc, id efficitur nisl finibus a. Nulla
+          convallis leo ut leo cursus, in molestie nibh viverra. Phasellus at
+          nisi tellus. Nam diam nibh, egestas vulputate nisl et, condimentum
+          interdum metus. Vestibulum bibendum vitae enim vel condimentum.
+          Quisque suscipit lectus vitae elit varius, sit amet feugiat velit
+          luctus. Donec non ante mattis, interdum magna in, tristique quam.
+          Pellentesque finibus finibus odio quis mollis. Duis et urna et mauris
+          interdum iaculis. Ut at eros a risus rutrum dapibus. Proin quis
+          pretium mauris. Vestibulum a ante accumsan, viverra dolor ac,
+          convallis tortor. In finibus ut justo id rhoncus. Quisque vel suscipit
+          quam, in laoreet est. Nunc facilisis finibus rhoncus.
+        </p>
+        <button class="main_button"><strong>Читать дальше</strong></button>
+        <div class="extra-text">
+          <button class="main_close-button">&times;</button>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            consequat pellentesque nisl eu lacinia. Vivamus et tincidunt lorem.
+            Vivamus quis ullamcorper nibh. Phasellus fermentum elementum
+            tincidunt. Aliquam id accumsan dui. Pellentesque vel sodales elit,
+            eget sodales dui. Aenean sit amet ornare ligula, eget porta dolor.
+            Sed bibendum accumsan sapien, sed hendrerit tortor semper in.
+            Curabitur non justo a ligula euismod porta in ullamcorper dui. Fusce
+            et sagittis mauris. Donec nec maximus felis, quis suscipit purus.
+            Nunc et venenatis diam, sed volutpat leo. Sed at dolor at tortor
+            sollicitudin venenatis et a dolor. Suspendisse potenti. Sed tempor,
+            eros id dictum efficitur, erat erat luctus massa, quis mollis nulla
+            sapien ac nunc. Fusce sodales elementum maximus. Maecenas iaculis
+            blandit metus vel sodales. Vivamus eu dapibus tellus. Nam magna
+            odio, placerat et arcu quis, venenatis imperdiet metus. In fermentum
+            nec ante et fermentum. quam, in laoreet est. Nunc facilisis finibus
+            rhoncus.
+          </p>
+        </div>
+      </div>
+
+      <div class="main_text">
+        <h2>Lorem ipsum</h2>
+        <img src="images/girl.jpg" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          consequat pellentesque nisl eu lacinia. Vivamus et tincidunt lorem.
+          Vivamus quis ullamcorper nibh. Phasellus fermentum elementum
+          tincidunt. Aliquam id accumsan dui. Pellentesque vel sodales elit,
+          eget sodales dui. Aenean sit amet ornare ligula, eget porta dolor. Sed
+          bibendum accumsan sapien, sed hendrerit tortor semper in. Curabitur
+          non justo a ligula euismod porta in ullamcorper dui. Fusce et sagittis
+          mauris. Donec nec maximus felis, quis suscipit purus. Nunc et
+          venenatis diam, sed volutpat leo. Sed at dolor at tortor sollicitudin
+          venenatis et a dolor. Suspendisse potenti. Sed tempor, eros id dictum
+          efficitur, erat erat luctus massa, quis mollis nulla sapien ac nunc.
+          Fusce sodales elementum maximus. Maecenas iaculis blandit metus vel
+          sodales. Vivamus eu dapibus tellus. Nam magna odio, placerat et arcu
+          quis, venenatis imperdiet metus. In fermentum nec ante et fermentum.
+          Nulla tristique convallis porta. Nunc sit amet tristique libero.
+          Aenean bibendum consectetur nunc, id efficitur nisl finibus a. Nulla
+          convallis leo ut leo cursus, in molestie nibh viverra. Phasellus at
+          nisi tellus. Nam diam nibh, egestas vulputate nisl et, condimentum
+          interdum metus. Vestibulum bibendum vitae enim vel condimentum.
+          Quisque suscipit lectus vitae elit varius, sit amet feugiat velit
+          luctus. Donec non ante mattis, interdum magna in, tristique quam.
+          Pellentesque finibus finibus odio quis mollis. Duis et urna et mauris
+          interdum iaculis. Ut at eros a risus rutrum dapibus. Proin quis
+          pretium mauris. Vestibulum a ante accumsan, viverra dolor ac,
+          convallis tortor. In finibus ut justo id rhoncus. Quisque vel suscipit
+          quam, in laoreet est. Nunc facilisis finibus rhoncus.
+        </p>
+        <button class="main_button"><strong>Читать дальше</strong></button>
+        <div class="extra-text">
+          <button class="main_close-button">&times;</button>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            consequat pellentesque nisl eu lacinia. Vivamus et tincidunt lorem.
+            Vivamus quis ullamcorper nibh. Phasellus fermentum elementum
+            tincidunt. Aliquam id accumsan dui. Pellentesque vel sodales elit,
+            eget sodales dui. Aenean sit amet ornare ligula, eget porta dolor.
+            Sed bibendum accumsan sapien, sed hendrerit tortor semper in.
+            Curabitur non justo a ligula euismod porta in ullamcorper dui. Fusce
+            et sagittis mauris. Donec nec maximus felis, quis suscipit purus.
+            Nunc et venenatis diam, sed volutpat leo. Sed at dolor at tortor
+            sollicitudin venenatis et a dolor. Suspendisse potenti. Sed tempor,
+            eros id dictum efficitur, erat erat luctus massa, quis mollis nulla
+            sapien ac nunc. Fusce sodales elementum maximus. Maecenas iaculis
+            blandit metus vel sodales. Vivamus eu dapibus tellus. Nam magna
+            odio, placerat et arcu quis, venenatis imperdiet metus. In fermentum
+            nec ante et fermentum. quam, in laoreet est. Nunc facilisis finibus
+            rhoncus.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Информационный блок о Великой Отечественной войне с ключевыми фактами и цифрами, который повторяется на всех страницах-->
+    <div class="info">
+      <div class="info-text">
+        <h2>Великая Отечественная война в цифрах:</h2>
+        <p><strong> - 1418 дней длилась война</strong></p>
+        <p>
+          Великая Отечественная война началась 22 июня 1941 года. Она
+          продолжалась 3 года 10 месяцев и 18 дней
+        </p>
+        <p><strong>- 1126 дней продолжалась битва за Ленинград</strong></p>
+        <p>Самое продолжительное сражение Великой Отечественной войны</p>
+        <p><strong> - 872 дня длилась блокада Ленинграда</strong></p>
+        <p>Самая кровопролитная блокада в истории человечества</p>
+        <p><strong> - 125 блокадных хлебных грамм</strong></p>
+        <p>
+          Столько в сутки получали дети, служащие и иждивенцы в самые суровые
+          дни блокады Ленинграда (350 килокалорий)
+        </p>
+        <p>
+          <strong> - 26,6 миллионов советских граждан погибли на войне</strong>
+        </p>
+        <p>
+          <strong>
+            - более 3 миллионов человек погибло на территории БССР в годы
+            Великой Отечественной войны</strong
+          >
+        </p>
+        <p>
+          <strong>
+            - 209 белорусских городов из 270 разрушено и разграблено</strong
+          >
+        </p>
+        <p><strong> - сожжено не менее 12 348 сел и деревень</strong></p>
+      </div>
+    </div>
+
+    <!-- Информационный блок с контактной информацией -->
+    <div class="footer-info">
+      <img src="images/content/logo_vgik_grey.jpg" />
+      <div class="footer-info_text-1">
+        <strong><i class="fa-solid fa-location-dot fa-lg"></i> Адрес:</strong>
+        <p>210038, г. Витебск, ул. Терешковой ,20 ( КОРПУС 1 )</p>
+        <p>210015, г. Витебск, ул. Ленина ,8 ( КОРПУС 2 )</p>
+        <p><i class="fa-regular fa-envelope-open fa-lg"></i> mail@vgik.by</p>
+      </div>
+      <div class="footer-info_text-2">
+        <strong>Приёмная директора:</strong>
+        <p><i class="fa-solid fa-phone-flip fa-lg"></i> 80 212 67 20 29</p>
+        <strong>Учебная часть:</strong>
+        <p><i class="fa-solid fa-phone-flip fa-lg"></i> 80 212 67 32 15</p>
+      </div>
+    </div>
+
+    <!-- Нижний колонтитул с копирайтом и ссылками на соцсети -->
+    <div class="footer">
+      <div class="red-line"></div>
+      <div class="footer_text">
+        <p class="copyright">&copy; <span id="year">2024</span></p>
+        <a href="https://vgik.by/" target="_blank">
+          <i class="fa-solid fa-link fa-2xl"></i>
+        </a>
+        <a href="https://www.instagram.com/vgik_vitebsk/" target="_blank">
+          <i class="fa-brands fa-instagram fa-2xl"></i>
+        </a>
+        <a href="https://www.tiktok.com/@vgik_vitebsk" target="_blank">
+          <i class="fa-brands fa-tiktok fa-2xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        new ShowHide(
+          document.querySelector(".main"),
+          "main_text_visible", // класс, который добавляется для показа текста
+          "main_text", // родительский блок
+          "main_button", // кнопка открытия
+          "main_close-button" // кнопка закрытия
+        );
+      });
+    </script>
+
+    <!-- <script>
+      const containerMain = document.querySelector(".main");
+
+      containerMain.addEventListener("click", (event) => {
+        const item = event.target;
+
+        const button = item.classList.contains("main_button")
+          ? item
+          : item.closest(".main_button");
+        const parentBlock = item.closest(".main_text");
+
+        if (button) {
+          parentBlock.classList.add("main_text_visible");
+          button.classList.add("hidden");
+        }
+
+        if (item.classList.contains("main_close-button")) {
+          parentBlock.classList.remove("main_text_visible");
+          const hiddenButton = parentBlock.querySelector(".main_button.hidden");
+          if (hiddenButton) {
+            hiddenButton.classList.remove("hidden");
+          }
+        }
+      });
+    </script> -->
+
+    <script type="text/javascript" src="JS/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="JS/slick.min.js"></script>
+    <script src="JS/glightbox.min.js"></script>
+    <script type="text/javascript" src="JS/main.js"></script>
+  </body>
+</html>
