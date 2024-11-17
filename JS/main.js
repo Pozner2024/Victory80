@@ -1,3 +1,13 @@
+// Загрузка header
+fetch("header.html")
+  .then((response) => response.text())
+  .then((data) => (document.getElementById("header").innerHTML = data));
+
+// Загрузка footer
+fetch("footer.html")
+  .then((response) => response.text())
+  .then((data) => (document.getElementById("footer").innerHTML = data));
+
 class ShowHide {
   constructor(
     selectedContainer,

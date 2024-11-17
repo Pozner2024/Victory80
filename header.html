@@ -1,0 +1,129 @@
+<!-- 
+  Навигационный блок.
+  Этот блок включает в себя логотип, меню навигации и кнопку "Наши проекты".-->
+<div class="navigation">
+  <!-- Ссылка на сайт учреждения образования-->
+  <a href="https://vgik.by/" target="_blank" class="logo_link">
+    <img src="images/content/logo_vgik-01-02.png" alt="Логотип ВГИК" />
+  </a>
+
+  <!-- Основное меню навигации -->
+  <nav class="menu">
+    <!-- Кнопка для открытия/закрытия меню на мобильных устройствах -->
+    <button class="menu_toggler" onclick="menuToggle()"></button>
+
+    <!-- Список пунктов основного меню -->
+    <ul class="menu_list">
+      <li class="menu_item">
+        <a href="Index.html" class="menu_link">Главная</a>
+        <div class="menu_dropdown">
+          <div class="submenu-image">
+            <img src="images/collage.jpg" />
+          </div>
+          <ul class="submenu">
+            <li class="submenu_item"><a href="vov.html">Хронология ВОВ</a></li>
+            <li class="submenu_item">
+              <a href="events.html">Основные события ВОВ</a>
+            </li>
+            <li class="submenu_item">
+              <a href="chronicle.html">Хроника освобождения Беларуси</a>
+            </li>
+            <li class="submenu_item"><a href="#">Витебск в годы ВОВ</a></li>
+            <li class="submenu_item">
+              <a href="#">Геноцид белорусского народа в годы ВОВ</a>
+            </li>
+            <li class="submenu_item">
+              <a href="memories.html">Воспоминания и рассказы участников ВОВ</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="menu_item">
+        <a href="test.html" class="menu_link">Задания</a>
+        <div class="menu_dropdown">
+          <div class="submenu-image">
+            <img src="images/hand.jpg" />
+          </div>
+          <ul class="submenu">
+            <li class="submenu_item">
+              <a href="test.html">Викторина "ВОВ в числах"</a>
+            </li>
+            <li class="submenu_item">
+              <a href="test.html">Кроссворд "80 шагов к Победе"</a>
+            </li>
+            <li class="submenu_item">
+              <a href="#">Тест "Основные события ВОВ"</a>
+            </li>
+            <li class="submenu_item"><a href="#">Игра "1945"</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="menu_item">
+        <a href="film.html" class="menu_link">Фильмотека</a>
+        <div class="menu_dropdown">
+          <div class="submenu-image">
+            <img src="images/soldier.jpg" />
+          </div>
+          <ul class="submenu">
+            <li class="submenu_item">
+              <a href="film.html">Военная драма "Солдатик"</a>
+            </li>
+            <li class="submenu_item">
+              <a href="film.html">Военная драма "Девочка ищет отца"</a>
+            </li>
+            <li class="submenu_item">
+              <a href="film.html">Военная драма "Брестская крепость"</a>
+            </li>
+            <li class="submenu_item">
+              <a href="film.html">Военная драма "Мальчик в полосатой пижаме"</a>
+            </li>
+            <li class="submenu_item">
+              <a href="film.html">Военная драма "А зори здесь тихие..."</a>
+            </li>
+            <li class="submenu_item">
+              <a href="film.html">Военная драма "Сталинград"</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="menu_item">
+        <a href="about.html" class="menu_link">О нас</a>
+        <div class="menu_dropdown">
+          <div class="submenu-image">
+            <img src="images/vgik.jpg" />
+          </div>
+          <ul class="submenu">
+            <li class="submenu_item"><a href="about.html">О проекте</a></li>
+            <li class="submenu_item"><a href="about.html">О нас</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Меню для мобильных устройств -->
+    <ul class="menu_list_480">
+      <li class="menu_item">
+        <a href="Index.html" class="menu_link">Главная</a>
+      </li>
+      <li class="menu_item">
+        <a href="test.html" class="menu_link">Задания</a>
+      </li>
+      <li class="menu_item">
+        <a href="film.html" class="menu_link">Фильмотека</a>
+      </li>
+      <li class="menu_item">
+        <a href="about.html" class="menu_link">О нас</a>
+      </li>
+      <li class="menu_item"><a href="#" class="menu_link">Наши проекты</a></li>
+      <li class="menu_item">
+        <a href="memories.html">Воспоминания участников ВОВ</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Кнопка для навигации к странице "Наши проекты" -->
+  <a href="projects.html" class="button navigation_button">Наши проекты</a>
+</div>

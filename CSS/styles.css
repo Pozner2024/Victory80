@@ -55,6 +55,22 @@ body {
   height: 70%;
   width: auto;
 }
+
+/* Стили для меню */
+.menu_list_480 {
+  display: none;
+  width: 100%;
+  background-color: rgb(48, 48, 49, 0.9);
+  position: absolute;
+  flex-direction: column;
+  padding: 0 15px;
+  margin-top: 10px;
+  list-style: none;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
 .menu {
   position: relative;
 }
@@ -79,7 +95,6 @@ body {
   text-align: center;
   width: 100%;
 }
-
 .menu_item a {
   color: white;
   text-decoration: none;
@@ -925,7 +940,7 @@ h3 {
     margin-right: 8px;
   }
   .menu_item {
-    margin: 20px 20px;
+    margin: 0 20px;
     position: relative;
   }
   .submenu-image {
@@ -1034,7 +1049,7 @@ h3 {
     font-size: 16px;
   }
   .menu_item {
-    margin: 20px 14px;
+    margin: 0 14px;
   }
   .banner {
     height: 400px;
@@ -1184,15 +1199,13 @@ h3 {
     width: auto;
     height: 70px;
   }
-  .menu_item_button {
+  .navigation_button {
     order: 2;
     width: 180px;
     height: 50px;
   }
-  .menu_item {
-    order: 3;
-  }
   .menu {
+    order: 3;
     width: 100%;
     position: static;
     margin-bottom: 20px;
@@ -1513,24 +1526,13 @@ h3 {
   .menu button {
     display: block;
   }
-
+  .menu_list {
+    display: none;
+  }
   .logo_link {
     margin-top: 0;
   }
-  .menu_list {
-    display: none;
-    width: 100%;
-    background-color: rgb(48, 48, 49, 0.9);
-    position: absolute;
-    flex-direction: column;
-    padding: 0 15px;
-    margin-top: 10px;
-    list-style: none;
-    top: 100%;
-    left: 0;
-    right: 0;
-  }
-  .menu_list.opened {
+  .menu_list_480.opened {
     display: flex;
   }
   .menu_toggler::before {
@@ -1589,37 +1591,7 @@ h3 {
   .topic {
     margin-top: 10px;
   }
-  .about {
-    grid-template-rows: 200px auto auto;
-    grid-template-columns: 10px 1fr 10px;
-    grid-row: auto;
-    padding: 0 20px;
-  }
-  .about_article-1 {
-    margin-top: -20px;
-  }
-  .about_pic1 {
-    display: none;
-  }
-  .about_pic2 {
-    display: none;
-  }
-  .about_pic3 {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    border: none;
-    margin: 0;
-    width: 100%;
-  }
-  .films_video iframe {
-    height: 200px;
-  }
-  .section_images {
-    display: none;
-  }
-  .section_item h1 {
-    font-size: 18px;
-  }
+
   .navigation_button {
     display: none;
   }
@@ -1647,7 +1619,6 @@ h3 {
   }
   .info {
     height: 440px;
-    margin-top: 10px;
   }
   .info-text {
     margin: 20px auto;
@@ -1660,18 +1631,6 @@ h3 {
   }
   .footer_text i.fa-2xl::before {
     font-size: 16px;
-  }
-  .project-1_gallery a,
-  .project-2_gallery a,
-  .project-3_gallery a,
-  .project-4_gallery a {
-    margin: 10px 50px;
-  }
-  .project-1_text,
-  .project-2_text,
-  .project-3_text,
-  .project-4_text {
-    padding: 5px 10px;
   }
 }
 @media (max-width: 380px) {
@@ -1716,11 +1675,5 @@ h3 {
   }
   .footer-info_text-2 {
     margin-left: -150px;
-  }
-  .project-1_gallery a,
-  .project-2_gallery a,
-  .project-3_gallery a,
-  .project-4_gallery a {
-    margin: 10px 20px;
   }
 }
