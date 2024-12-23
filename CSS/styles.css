@@ -699,18 +699,22 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px; /* Устанавливаем ширину прямоугольника */
-  height: 700px;
+  padding: 20px;
   background-color: #040404;
   color: white;
   border: 1px solid #010101;
-  padding: 20px;
-  text-align: center;
+  text-align: left;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   opacity: 0.7;
   z-index: 10;
+  max-width: 90%;
+  width: auto;
+  max-height: 90%;
+  height: auto;
+  overflow-y: auto;
 }
+
 /* Стили для крестика */
 .close-button {
   position: absolute;
