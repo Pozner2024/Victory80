@@ -70,7 +70,13 @@ body {
   left: 0;
   right: 0;
 }
+.menu_list_480.opened {
+  display: block; /* Показываем меню при добавлении класса opened */
+}
 
+.menu_toggler.opened {
+  background-color: #ccc; /* Пример изменения стиля кнопки */
+}
 .menu {
   position: relative;
 }
