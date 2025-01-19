@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>film-collection</title>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <canvas id="sceneCanvas"></canvas>
+
+    <script>
+      // === Создание сцены, камеры, рендерера ===
+      const canvas = document.getElementById("sceneCanvas");
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      const scene = new THREE.Scene();
+      // Установим синий фон, как в A-Frame (color="blue")
+      scene.background = new THREE.Color(0x0000ff);
+
+      // Камера (похоже на a-camera position="0 2 50")
+      const camera = new THREE.PerspectiveCamera(
+        60, // угол обзора
+        window.innerWidth / window.innerHeight, // соотношение сторон
+        0.1, // ближняя плоскость отсечения
+        1000 // дальняя плоскость отсечения
+      );
+      camera.position.set(0, 2, 50);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+      directionalLight.position.set(1, 3, 3);
+      scene.add(directionalLight);
+
+      // === Группа объектов (карусель) ===
+      const carouselGroup = new THREE.Group();
+      carouselGroup.position.set(0, 2, -16);
+      scene.add(carouselGroup);
+
+      // Данные по «видео»/изображениям
+      const itemsData = [
+        {
+          position: [50, 0, 0],
+          image: "./images/test1.jpg",
+          url: "https://www.youtube.com/embed/CeWStHSV1Tw?si=xY2LFktLST3NoOTh",
+        },
+        {
+          position: [-50, 0, 0],
+          image: "./images/test2.jpg",
+          url: "https://www.youtube.com/embed/HQeEqno24ps?si=7-gAV3rS-Dx3CJrE",
+        },
+        {
+          position: [25, 0, 43],
+          image: "./images/test3.jpg",
+          url: "https://www.youtube.com/embed/wzIuR-AWY0g?si=YiOmNmk6imQqr8IO",
+        },
+        {
+          position: [-25, 0, 43],
+          image: "./images/1942.jpg",
+          url: "https://www.youtube.com/embed/Da5ZYR-AioA?si=VTgjo0LwCmr1tjke",
+        },
+        {
+          position: [25, 0, -43],
+          image: "./images/test4.jpg",
+          url: "https://www.youtube.com/embed/DJ3OH0k0syI?si=YumgoEBjauHAue-X",
+        },
+        {
+          position: [-25, 0, -43],
+          image: "./images/test5.jpg",
+          url: "https://www.youtube.com/embed/yosGzo8Bypw?si=5tx1vhKJmOKC3SBA",
+        },
+      ];
+
+      // === Главная геометрия (уменьшаем размер) ===
+      // Сохраняем пропорцию 4:3, например: width=30, height=22.5
+      const mainPlaneWidth = 30;
+      const mainPlaneHeight = 22.5;
+      const mainPlaneGeometry = new THREE.PlaneGeometry(
+        mainPlaneWidth,
+        mainPlaneHeight
+      );
+
+      // Текстурный загрузчик
+      const textureLoader = new THREE.TextureLoader();
+
+      // Массив контейнеров, чтобы потом поворачивать к камере
+      const videoPlanes = [];
+
+      itemsData.forEach((item) => {
+        // Создаём материал для «квадрата» (плоскости) с текстурой
+        const texture = textureLoader.load(item.image);
+        const material = new THREE.MeshBasicMaterial({
+          map: texture,
+          side: THREE.DoubleSide,
+        });
+        const mainPlane = new THREE.Mesh(mainPlaneGeometry, material);
+
+        // Создаём контейнер (Group) и позиционируем
+        const container = new THREE.Group();
+        container.position.set(
+          item.position[0],
+          item.position[1],
+          item.position[2]
+        );
+        container.add(mainPlane);
+
+        // Сохраняем URL, чтобы при клике открывать ссылку
+        container.userData.url = item.url;
+
+        // Добавляем контейнер в группу карусели
+        carouselGroup.add(container);
+        // Сохраняем, чтобы каждый кадр делать lookAt
+        videoPlanes.push(container);
+      });
+
+      // === Raycaster и обработка клика ===
+      const raycaster = new THREE.Raycaster();
+      const pointer = new THREE.Vector2();
+
+      function onPointerDown(event) {
+        pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+        pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+        raycaster.setFromCamera(pointer, camera);
+        const intersects = raycaster.intersectObjects(
+          carouselGroup.children,
+          true
+        );
+
+        if (intersects.length > 0) {
+          // Проверяем, есть ли у родителя userData.url
+          for (let i = 0; i < intersects.length; i++) {
+            const obj = intersects[i].object;
+            if (obj.parent && obj.parent.userData.url) {
+              const url = obj.parent.userData.url;
+              window.open(url, "_blank");
+              break;
+            }
+          }
+        }
+      }
+
+      window.addEventListener("pointerdown", onPointerDown);
+
+      // === Обработка ресайза окна ===
+      window.addEventListener("resize", onWindowResize);
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+
+      // === Анимационный цикл ===
+      function animate() {
+        requestAnimationFrame(animate);
+
+        // Делаем вращение медленнее – полный оборот ~ за 40 секунд
+        carouselGroup.rotation.y += (2 * Math.PI) / (40 * 60);
+
+        // Поворачиваем все плашки лицом к камере
+        videoPlanes.forEach((plane) => {
+          plane.lookAt(camera.position);
+        });
+
+        renderer.render(scene, camera);
+      }
+
+      animate();
+    </script>
+  </body>
+</html>

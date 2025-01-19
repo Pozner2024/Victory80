@@ -1,0 +1,114 @@
+/* Стили для страницы projects */
+.project-container {
+  margin: 50px 100px;
+}
+.project-1_gallery,
+.project-2_gallery,
+.project-3_gallery,
+.project-4_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.project-1_gallery a {
+  flex: 1 1 calc(25% - 10px);
+  display: block;
+}
+.project-3_gallery a {
+  flex: 1 1 calc(40% - 10px);
+  display: block;
+}
+.project img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.project-1_gallery img {
+  height: 320px;
+}
+.project-2_gallery img {
+  height: 380px;
+}
+.project-3_gallery img {
+  height: 380px;
+}
+.project-4_gallery img {
+  height: 580px;
+}
+.project-1_gallery img:hover,
+.project-2_gallery img:hover,
+.project-3_gallery img:hover,
+.project-4_gallery img:hover {
+  transform: scale(1.05);
+}
+
+.project-2_gallery a,
+.project-4_gallery a {
+  flex: 1 1 calc(30% - 10px);
+  display: block;
+}
+@media (max-width: 1400px) {
+}
+@media (max-width: 1200px) {
+  .project-1_gallery img,
+  .project-3_gallery img {
+    height: 200px;
+  }
+  .project-2_gallery img {
+    height: 300px;
+  }
+  .project-4_gallery img {
+    height: 500px;
+  }
+}
+@media (max-width: 980px) {
+  .project-container {
+    margin: 0px 30px;
+  }
+  .project-1_gallery img,
+  .project-3_gallery img {
+    height: 150px;
+  }
+  .project-2_gallery img {
+    height: 250px;
+  }
+  .project-4_gallery img {
+    height: 350px;
+  }
+}
+@media (max-width: 768px) {
+  .project-4_gallery img {
+    height: 250px;
+  }
+}
+@media (max-width: 576px) {
+  .project-1_gallery a,
+  .project-2_gallery a,
+  .project-3_gallery a,
+  .project-4_gallery a {
+    flex: 1 1 100%;
+    margin: 10px 100px;
+  }
+  .project-1_gallery img,
+  .project-3_gallery img {
+    height: 200px;
+  }
+  .project-2_gallery img {
+    height: 250px;
+  }
+  .project-4_gallery img {
+    height: 360px;
+  }
+  .project-1_gallery,
+  .project-2_gallery,
+  .project-3_gallery,
+  .project-4_gallery {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 380px) {
+}

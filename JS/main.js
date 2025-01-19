@@ -124,16 +124,6 @@ function menuToggle() {
   }
 }
 
-// // Находим элементы меню и кнопки переключения
-// const menu = document.querySelector(".menu_list");
-// const menuButton = document.querySelector(".menu_toggler");
-
-// // Функция для переключения состояния меню
-// function menuToggle() {
-//   menu.classList.toggle("opened"); // Переключаем класс "opened" у меню
-//   menuButton.classList.toggle("opened"); // Переключаем класс "opened" у кнопки
-// }
-
 // Находим контейнер для года
 const yearContainer = document.querySelector("#year");
 // Устанавливаем текущий год в контейнер

@@ -43,3 +43,18 @@ blockquote {
   font-weight: bold;
   margin-top: 10px;
 }
+
+@media (max-width: 1400px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 980px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 380px) {
+}
