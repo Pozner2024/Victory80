@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+}
+
+/* Кнопка "Назад" */
+.back-button {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 9999;
+}
+.back-button:hover {
+  background: rgb(169, 31, 31);
+}
+
+/* A-Frame сцена (на весь экран) */
+a-scene {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Кнопка "На весь экран" */
+.fullscreen-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 9999;
+}
+.fullscreen-button:hover {
+  background: white;
+  color: black;
+}
+
+/* Ограничиваем стили только для страницы виртуального тура */
+.virtual-tour-page {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Убираем скролл */
+}
+
+/* Контейнер для iframe */
+.virtual-tour-iframe-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Встраиваемая панорама */
+.virtual-tour-iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Кнопка "Назад" */
+.virtual-tour-back-button {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 1000;
+}
+.virtual-tour-back-button:hover {
+  background: rgba(224, 35, 35, 0.6);
+}
+
+/* Кнопка "На весь экран" */
+.virtual-tour-fullscreen-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 1000;
+}
+.virtual-tour-fullscreen-button:hover {
+  background: white;
+  color: black;
+}

@@ -74,9 +74,9 @@ class ShowHide {
 //скрипт для слайдера
 $(document).ready(function () {
   // Проверяем, существует ли элемент с классом "slider" на странице
-  if ($(".slider").length > 0) {
+  if ($(".slider, .slider-vit").length > 0) {
     // Инициализируем плагин slick на элементе с классом "slider"
-    $(".slider").slick({
+    $(".slider, .slider-vit").slick({
       dots: true, // Показывать точки навигации
       infinite: true, // Бесконечный цикл прокрутки
       autoplay: true, // Автоматически переключать слайды
@@ -121,6 +121,20 @@ function menuToggle() {
     menuButton.classList.toggle("opened"); // Переключение класса для кнопки
   } else {
     console.error("Элементы меню или кнопки не найдены");
+  }
+}
+// кнопка развернуть на весь экран
+
+function toggleFullscreen() {
+  const scene = document.getElementById("scene");
+  if (!document.fullscreenElement) {
+    scene.requestFullscreen().catch((err) => {
+      console.warn(
+        `Ошибка при переключении в полноэкранный режим: ${err.message}`
+      );
+    });
+  } else {
+    document.exitFullscreen();
   }
 }
 

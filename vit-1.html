@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Виртуальный тур</title>
+    <link rel="stylesheet" href="CSS/virtual-tour.css" />
+  </head>
+  <body class="virtual-tour-page">
+    <!-- Кнопка возврата -->
+    <a href="index.html" class="virtual-tour-back-button">← Назад</a>
+
+    <!-- Кнопка "На весь экран" -->
+    <button class="virtual-tour-fullscreen-button" onclick="toggleFullscreen()">
+      ⛶ На весь экран
+    </button>
+
+    <!-- Контейнер для 360° панорамы -->
+    <div class="virtual-tour-iframe-container" id="iframeContainer">
+      <iframe
+        id="virtualTour"
+        src="https://truevirtualtours.com/ru/panorama/10888/360view"
+        allowfullscreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+      >
+      </iframe>
+    </div>
+
+    <script>
+      function toggleFullscreen() {
+        const container = document.getElementById("iframeContainer");
+        if (!document.fullscreenElement) {
+          container.requestFullscreen().catch((err) => {
+            console.warn(
+              `Ошибка при переключении в полноэкранный режим: ${err.message}`
+            );
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      }
+    </script>
+  </body>
+</html>
