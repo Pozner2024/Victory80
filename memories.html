@@ -48,7 +48,10 @@
       <hr class="centered-line" />
       <div class="main_text">
         <h2>Герой зимней войны - Николай Федорович Турцевич</h2>
-        <img src="images/Turcevich.jpg" />
+        <img src="images/Turcevich.jpg" alt="Николай Федорович Турцевич" />
+        
+        <audio id="audioTurcevich" src="audio/Turcevich.wav"></audio>
+        
         <h3>Историческая справка</h2>
 
         <p>
@@ -72,6 +75,7 @@
         </p>
 
         <h3>Николай Фёдорович Турцевич</h3>
+        <button class="play-audio-button">🎧 Прослушать</button>
         <p>
           <strong>(15.10.1914 — 14.02.1940)</strong> — лейтенант, командир
           взвода, Герой Советского Союза (1940).
@@ -100,9 +104,16 @@
           посмертно присвоено звание Героя Советского Союза.
         </p>
         <div class="image-container">
-          <img src="images/memorialg.jpg" alt="Память" />
-          <img src="images/meromial2.jpg" alt="Память" />
-        </div>
+  <figure>
+    <img src="images/memorialg.jpg" alt="Мемориал героям войны" />
+    <figcaption>Мемориал героям войны</figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/meromial2.jpg" alt="Обелиск памяти павших героев" />
+    <figcaption>Обелиск памяти павших героев</figcaption>
+  </figure>
+</div>
         <button class="main_button"><strong>Читать дальше</strong></button>
         <div class="extra-text">
           <button class="main_close-button">&times;</button>
@@ -134,8 +145,15 @@
             Горбовичи.
           </p>
           <div class="image-container">
-            <img src="images/mapTurs1.jpg" alt="Карта" />
-            <img src="images/mapTurc.jpg" alt="Карта" />
+            <figure>
+              <img src="images/mapTurs1.jpg" alt="Карта деревни Турцевичи" />
+              <figcaption>Карта деревни Турцевичи</figcaption>
+            </figure>
+          
+            <figure>
+              <img src="images/mapTurc.jpg" alt="Карта захоронения" />
+              <figcaption>Карта предполагаемого места захоронения</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -318,6 +336,23 @@
           "main_close-button" // кнопка закрытия
         );
       });
+      
+  document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("audioTurcevich");
+    const playButton = document.querySelector(".play-audio-button");
+
+    playButton.addEventListener("click", function () {
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = "⏸ Остановить";
+      } else {
+        audio.pause();
+        playButton.textContent = "🎧 Прослушать";
+      }
+    });
+  });
+
+
     </script>
 
     <!-- <script>

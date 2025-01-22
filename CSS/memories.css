@@ -58,10 +58,57 @@
 }
 .image-container {
   display: flex;
-  justify-content: center; 
-  gap: 10px; /
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
 }
+
+.image-container figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  margin: 0 auto;
+}
+
 .image-container img {
-  width: 40%; 
+  width: 100%;
   height: auto;
+  border-radius: 5px;
+}
+
+.image-container figcaption {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #b71c1c; /* Темно-красный цвет */
+  font-weight: bold;
+  text-align: center;
+}
+
+.play-audio-button {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #d32f2f; /* Красный цвет, как символ героизма */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.play-audio-button:hover {
+  background-color: #b71c1c; /* Темнее при наведении */
+  transform: scale(1.05);
+}
+
+.play-audio-button:active {
+  transform: scale(0.95);
+}
+.main_text p {
+  text-indent: 30px; /* Отступ первой строки */
+  line-height: 1.6; /* Улучшение читаемости */
 }
