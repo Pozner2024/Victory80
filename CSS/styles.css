@@ -7,6 +7,7 @@ html {
   font-style: normal;
   box-sizing: border-box;
 }
+
 .rubik-wet-paint-regular {
   font-family: "Rubik Wet Paint", system-ui;
   font-weight: 400;
@@ -609,69 +610,10 @@ h3 {
 .films_video {
   margin-top: 60px;
 }
-/* Стили для старницы memories */
-.main {
-  padding: 20px 100px 10px;
-}
 .project-1_gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
-.main_button {
-  background-color: rgb(159, 9, 9);
-  color: rgb(11, 10, 10);
-  border: none;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  float: right;
-}
-
-.main_button:hover {
-  background-color: #060505;
-  color: white;
-}
-
-.main_button:active {
-  background-color: rgb(159, 9, 9);
-  transform: scale(0.98);
-}
-
-.main_button.hidden {
-  display: none;
-}
-
-.main_close-button {
-  float: right;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: white;
-  background-color: rgb(159, 9, 9);
-}
-
-.main img {
-  height: auto;
-  width: 25%;
-  float: right;
-  margin-left: 30px;
-}
-
-.main_text h2 {
-  text-align: left;
-}
-
-.extra-text {
-  display: none;
-}
-.main_text_visible .extra-text {
-  display: block;
 }
 
 @media (max-width: 1400px) {

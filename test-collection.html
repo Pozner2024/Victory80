@@ -2,8 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>film-collection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>great_victory - Тесты</title>
     <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <link rel="stylesheet" href="CSS/styles.css" />
   </head>
   <body
     style="
@@ -12,7 +14,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
       height: 100vh;
       position: relative;
     "
@@ -28,15 +29,13 @@
         border-radius: 5px;
       "
     >
-      Фильмотека
+      Тесты о Великой Отечественной войне
     </h1>
 
-    <!-- Canvas для Three.js -->
     <canvas id="sceneCanvas" style="flex-grow: 1"></canvas>
 
-    <!-- Кнопка, которую «научим» обрабатывать клики через делегирование -->
     <button
-      id="filmListButton"
+      id="testListButton"
       style="
         position: absolute;
         bottom: 10px;
@@ -50,17 +49,16 @@
         border-radius: 5px;
       "
     >
-      Смотреть список всех фильмов
+      Смотреть список всех тестов
     </button>
 
     <script>
-      // ====== Инициалиация сцены, камеры, рендерера Three.js ======
       const canvas = document.getElementById("sceneCanvas");
       const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
 
       const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x9f0909);
+      scene.background = new THREE.Color(0x1a1a1a);
 
       const camera = new THREE.PerspectiveCamera(
         60,
@@ -70,55 +68,51 @@
       );
       camera.position.set(0, 2, 50);
 
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-      directionalLight.position.set(1, 3, 3);
-      scene.add(directionalLight);
+      const light = new THREE.DirectionalLight(0xffffff, 1);
+      light.position.set(1, 3, 3);
+      scene.add(light);
 
-      // Группа-карусель
       const carouselGroup = new THREE.Group();
       carouselGroup.position.set(0, 2, -16);
       scene.add(carouselGroup);
 
-      // Данные о квадратах (позиция, картинка, ссылка)
       const itemsData = [
         {
           position: [50, 0, 0],
-          image: "./images/1946.jpg",
-          url: "https://www.youtube.com/embed/CeWStHSV1Tw",
+          image: "./images/collage.jpg",
+          url: "https://wordwall.net/ru/embed/eb118305e55d4b1ebb8933c742b7d9bc?themeId=3&templateId=5&fontStackId=0",
         },
         {
           position: [-50, 0, 0],
-          image: "./images/1946.jpg",
-          url: "https://www.youtube.com/embed/HQeEqno24ps",
+          image: "./images/collage.jpg",
+          url: "https://wordwall.net/ru/embed/44953895fd724f07ac0f1096e8c53a9d?themeId=49&templateId=11&fontStackId=0",
         },
         {
           position: [25, 0, 43],
-          image: "./images/1946.jpg",
-          url: "https://www.youtube.com/embed/wzIuR-AWY0g",
+          image: "./images/collage.jpg",
+          url: "https://wordwall.net/ru/embed/a28914cc1db64488b6c2c4f670d6e417?themeId=44&templateId=3&fontStackId=0",
         },
         {
           position: [-25, 0, 43],
-          image: "./images/1946.jpg",
-          url: "https://www.youtube.com/embed/Da5ZYR-AioA",
+          image: "./images/collage.jpg",
+          url: "https://wordwall.net/ru/embed/2e8cdbe1299344e0a8aad110f25e4bd4?themeId=62&templateId=38&fontStackId=0",
         },
         {
           position: [25, 0, -43],
-          image: "./images/1946.jpg",
-          url: "https://www.youtube.com/embed/DJ3OH0k0syI",
+          image: "./images/collage.jpg",
+          url: "https://wordwall.net/ru/embed/5d44ddbed07d4231b03e746f4d012158?themeId=4&templateId=3&fontStackId=0",
         },
         {
           position: [-25, 0, -43],
-          image: "./images/1946.jpg",
-          url: "https://www.youtube.com/embed/yosGzo8Bypw",
+          image: "./images/collage.jpg",
+          url: "https://wordwall.net/ru/embed/e73ee931735048f3807aece47e0424f9?themeId=1&templateId=22&fontStackId=0",
         },
       ];
 
-      // Создадим геометрию и загрузим текстуры
       const mainPlaneGeometry = new THREE.PlaneGeometry(30, 22.5);
       const textureLoader = new THREE.TextureLoader();
       const videoPlanes = [];
 
-      // Заполняем группу карусели
       itemsData.forEach((item) => {
         const texture = textureLoader.load(item.image);
         const material = new THREE.MeshBasicMaterial({
@@ -127,48 +121,35 @@
         });
         const mainPlane = new THREE.Mesh(mainPlaneGeometry, material);
 
-        // Контейнер для каждого «квадрата»
         const container = new THREE.Group();
         container.position.set(...item.position);
         container.add(mainPlane);
-
-        // Сохраняем ссылку в userData
         container.userData.url = item.url;
 
-        // Добавляем в сцену
         carouselGroup.add(container);
         videoPlanes.push(container);
       });
 
-      // Raycaster + вектор для кликов (для проверки пересечений)
       const raycaster = new THREE.Raycaster();
       const pointer = new THREE.Vector2();
 
-      // === ОДИН слушатель для всего документа (делегирование) ===
       document.addEventListener("pointerdown", (event) => {
-        // 1) Если клик попал в кнопку «Смотреть список всех фильмов»
-        if (event.target.id === "filmListButton") {
-          // Переходим на другую страницу
-          window.location.href = "film.html";
-          return; // выходим из обработчика, не делаем raycast
+        if (event.target.id === "testListButton") {
+          window.location.href = "test.html";
+          return;
         }
 
-        // 2) Иначе считаем, что клик по сцене → проверяем 3D-объекты
         pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
         pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
         raycaster.setFromCamera(pointer, camera);
-
-        // intersectObjects: ищем пересечение с дочерними объектами карусели
         const intersects = raycaster.intersectObjects(
           carouselGroup.children,
           true
         );
 
         if (intersects.length > 0) {
-          // Если есть пересечение, берём первый попавшийся
           for (let obj of intersects) {
-            // Смотрим, есть ли у родителя userData.url
             if (obj.object.parent?.userData.url) {
               window.open(obj.object.parent.userData.url, "_blank");
               break;
@@ -177,26 +158,18 @@
         }
       });
 
-      // Событие на ресайз окна
       window.addEventListener("resize", () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
       });
 
-      // Анимация (вращаем карусель)
       function animate() {
         requestAnimationFrame(animate);
-
-        // Плавно вращаем карусель
-        carouselGroup.rotation.y += (2 * Math.PI) / (40 * 60); // один оборот ~40 сек
-
-        // Чтобы «плоскости» смотрели в камеру
+        carouselGroup.rotation.y += (2 * Math.PI) / (40 * 60);
         videoPlanes.forEach((plane) => plane.lookAt(camera.position));
-
         renderer.render(scene, camera);
       }
-
       animate();
     </script>
   </body>
