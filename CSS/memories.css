@@ -2,6 +2,12 @@
 .main {
   padding: 20px 100px 10px;
 }
+.main_text {
+  margin-bottom: 100px;
+}
+.right-align {
+  text-align: right;
+}
 .main_text h2 {
   text-align: center;
 }
