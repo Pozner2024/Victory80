@@ -2,7 +2,6 @@
 .project-container {
   margin: 50px 100px;
 }
-.project-1_gallery,
 .project-2_gallery,
 .project-3_gallery,
 .project-4_gallery {
@@ -11,7 +10,6 @@
   gap: 10px;
   margin-bottom: 50px;
 }
-
 .project-1_gallery a {
   flex: 1 1 calc(25% - 10px);
   display: block;
@@ -19,6 +17,17 @@
 .project-3_gallery a {
   flex: 1 1 calc(40% - 10px);
   display: block;
+}
+.project-2_gallery a,
+.project-4_gallery a {
+  flex: 1 1 calc(30% - 10px);
+  display: block;
+}
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
 }
 .project img {
   width: 100%;
@@ -44,16 +53,30 @@
   transform: scale(1.05);
 }
 
-.project-2_gallery a,
-.project-4_gallery a {
-  flex: 1 1 calc(30% - 10px);
-  display: block;
+.project-1_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 50px;
 }
+
 .gallery-item {
+  flex: 1 1 0;
+  max-width: calc((100% - 3 * 10px) / 4);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 15px;
+}
+
+.gallery-item a img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-item a img:hover {
+  transform: scale(1.05);
 }
 
 .ar-button {
@@ -136,3 +159,52 @@
 }
 @media (max-width: 380px) {
 }
+
+/* Стили для страницы projects */
+/* .project-container {
+  margin: 50px 100px;
+}
+.project-1_gallery,
+.project-2_gallery,
+.project-3_gallery,
+.project-4_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.project-1_gallery a,
+.project-3_gallery a {
+  flex: 1 1 calc(25% - 10px);
+  display: block;
+}
+.project img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.project-1_gallery img {
+  height: 320px;
+}
+.project-2_gallery img {
+  height: 380px;
+}
+.project-3_gallery img {
+  height: 250px;
+}
+.project-4_gallery img {
+  height: 580px;
+}
+.project-1_gallery img:hover,
+.project-2_gallery img:hover,
+.project-3_gallery img:hover,
+.project-4_gallery img:hover {
+  transform: scale(1.05);
+}
+
+.project-2_gallery a,
+.project-4_gallery a {
+  flex: 1 1 calc(30% - 10px);
+  display: block;
+} */

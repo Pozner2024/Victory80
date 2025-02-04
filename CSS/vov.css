@@ -99,6 +99,7 @@
 .note_text_visible .note_text {
   display: block;
 }
+
 @media (max-width: 1400px) {
 }
 @media (max-width: 1200px) {

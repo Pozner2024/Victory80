@@ -43,7 +43,7 @@
         padding: 10px 20px;
         font-size: 18px;
         cursor: pointer;
-        background-color: #660033;
+        background-color: rgb(159, 9, 9);
         color: white;
         border: none;
         border-radius: 5px;
@@ -59,7 +59,7 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
 
       const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x9f0909);
+      scene.background = new THREE.Color(0x1a1a1a);
 
       const camera = new THREE.PerspectiveCamera(
         60,
@@ -82,32 +82,32 @@
       const itemsData = [
         {
           position: [50, 0, 0],
-          image: "./images/1946.jpg",
-          url: "https://www.youtube.com/embed/CeWStHSV1Tw",
+          image: "./images/we.jpg",
+          url: "https://www.youtube.com/embed/Oo2nS87KaOw?autoplay=1&fs=1",
         },
         {
           position: [-50, 0, 0],
-          image: "./images/1946.jpg",
+          image: "./images/girl-film.jpg",
           url: "https://www.youtube.com/embed/HQeEqno24ps",
         },
         {
           position: [25, 0, 43],
-          image: "./images/1946.jpg",
-          url: "https://www.youtube.com/embed/wzIuR-AWY0g",
+          image: "./images/fortress.jpg",
+          url: "https://www.youtube.com/embed/ge4nkvrtgqo?autoplay=1&fs=1",
         },
         {
           position: [-25, 0, 43],
-          image: "./images/1946.jpg",
+          image: "./images/boy.jpg",
           url: "https://www.youtube.com/embed/Da5ZYR-AioA",
         },
         {
           position: [25, 0, -43],
-          image: "./images/1946.jpg",
+          image: "./images/dawn.jpg",
           url: "https://www.youtube.com/embed/DJ3OH0k0syI",
         },
         {
           position: [-25, 0, -43],
-          image: "./images/1946.jpg",
+          image: "./images/Stalingrad-film.jpg",
           url: "https://www.youtube.com/embed/yosGzo8Bypw",
         },
       ];
@@ -165,9 +165,7 @@
         );
 
         if (intersects.length > 0) {
-          // Если есть пересечение, берём первый попавшийся
           for (let obj of intersects) {
-            // Смотрим, есть ли у родителя userData.url
             if (obj.object.parent?.userData.url) {
               window.open(obj.object.parent.userData.url, "_blank");
               break;
@@ -176,21 +174,17 @@
         }
       });
 
-      // Событие на ресайз окна
       window.addEventListener("resize", () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
       });
 
-      // Анимация (вращаем карусель)
       function animate() {
         requestAnimationFrame(animate);
 
-        // Плавно вращаем карусель
-        carouselGroup.rotation.y += (2 * Math.PI) / (40 * 60); // один оборот ~40 сек
+        carouselGroup.rotation.y += (2 * Math.PI) / (40 * 60);
 
-        // Чтобы «плоскости» смотрели в камеру
         videoPlanes.forEach((plane) => plane.lookAt(camera.position));
 
         renderer.render(scene, camera);

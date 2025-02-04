@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>360° Фото Панорама</title>
+    <link rel="stylesheet" href="CSS/virtual-tour.css" />
+    <!-- Подключаем A-Frame -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <!-- Кнопка возврата -->
+    <a href="index.html" class="back-button">← Назад</a>
+
+    <!-- Кнопка "На весь экран" -->
+    <button class="fullscreen-button" onclick="toggleFullscreen()">
+      ⛶ На весь экран
+    </button>
+
+    <a-scene
+      id="scene"
+      renderer="antialias: true; colorManagement: true; highRefreshRate: true; maxPixelRatio: 2; dpr: 2;"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: true"
+      allow="autoplay"
+    >
+      <a-assets>
+        <!-- 360° фото -->
+        <img id="myPhoto" src="images/vit-10.jpg" crossorigin="anonymous" />
+      </a-assets>
+
+      <!-- Камера -->
+      <a-entity
+        camera
+        look-controls
+        position="0 2 0"
+        camera="fov: 40; zoom: 1.1;"
+      ></a-entity>
+
+      <!-- Сфера с изображением -->
+      <a-entity
+        geometry="primitive: sphere; radius: 10000;"
+        material="src: #myPhoto; side: double; npot: true; precision: high; shader: standard; anisotropy: 16;"
+        scale="-1 1 1"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 60000; easing: linear"
+      ></a-entity>
+    </a-scene>
+    <script type="text/javascript" src="JS/main.js"></script>
+  </body>
+</html>

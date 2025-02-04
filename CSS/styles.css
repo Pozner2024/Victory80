@@ -183,7 +183,8 @@ h2 + p {
   height: 600px;
 }
 .banner img {
-  width: 50%;
+  max-width: 50%;
+  max-height: 500px;
   height: auto;
   float: right;
   margin: 40px 10px;
@@ -199,17 +200,58 @@ h2 + p {
   font-size: 70px;
   text-transform: uppercase;
 }
-.slider {
-  width: 96%;
+.centered-title {
+  text-align: center;
+}
+/* Для первого слайдера */
+.slider-vit {
+  width: 90%;
   margin: auto;
 }
+
+.slider-vit .slide {
+  height: 360px;
+  width: auto;
+  margin: 15px;
+}
+
+/* Для второго слайдера */
+.slider-memories {
+  width: 90%;
+  margin: auto;
+}
+
+/* Общие стили для обоих слайдеров */
 .slide {
   height: 200px;
   margin: 20px;
   position: relative;
   width: 100%;
 }
-.slide_text {
+
+.slider-vit .slide_text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 18px;
+  padding: 120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  display: none;
+}
+
+.slide:hover .slide_text {
+  display: block;
+}
+.slider-memories .slide_text {
   display: none;
   position: absolute;
   top: 0;
@@ -221,9 +263,6 @@ h2 + p {
   font-size: 18px;
   padding: 60px;
 }
-.slide:hover .slide_text {
-  display: block;
-}
 .slider .slick-arrow {
   background-color: #b10707;
   width: 30px;
@@ -234,6 +273,7 @@ h2 + p {
   color: #b10707;
   font-size: 40px;
 }
+
 .topic_header {
   margin: 50px 20px;
 }
@@ -574,7 +614,7 @@ h3 {
   text-align: left;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  opacity: 0.7;
+  opacity: 0.9;
   z-index: 10;
   max-width: 90%;
   width: auto;
@@ -609,11 +649,6 @@ h3 {
 }
 .films_video {
   margin-top: 60px;
-}
-.project-1_gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 
 @media (max-width: 1400px) {

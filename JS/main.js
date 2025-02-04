@@ -71,12 +71,45 @@ class ShowHide {
   }
 }
 
-//скрипт для слайдера
+$(document).ready(function () {
+  // Инициализация первого слайдера (slider-vit)
+  if ($(".slider-vit").length > 0) {
+    $(".slider-vit").slick({
+      dots: true,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      slidesToShow: 3,
+      responsive: [
+        {
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+    });
+  }
+});
+
+//скрипт для второго слайдера
 $(document).ready(function () {
   // Проверяем, существует ли элемент с классом "slider" на странице
-  if ($(".slider, .slider-vit").length > 0) {
+  if ($(".slider-memories").length > 0) {
     // Инициализируем плагин slick на элементе с классом "slider"
-    $(".slider, .slider-vit").slick({
+    $(".slider-memories").slick({
       dots: true, // Показывать точки навигации
       infinite: true, // Бесконечный цикл прокрутки
       autoplay: true, // Автоматически переключать слайды

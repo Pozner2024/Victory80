@@ -45,16 +45,75 @@ blockquote {
 }
 
 @media (max-width: 1400px) {
+  .banner_title h1 {
+    font-size: 30px;
+  }
 }
 @media (max-width: 1200px) {
+  .banner_title h1 {
+    font-size: 28px;
+  }
+  .genocide-info {
+    padding: 10px 50px 5px;
+  }
+  .genocide-info img {
+    margin: 20px;
+  }
 }
 @media (max-width: 980px) {
+  .banner_title h1 {
+    font-size: 26px;
+  }
+
+  .genocide-info img {
+    width: 40%;
+  }
 }
 @media (max-width: 768px) {
+  .banner_title h1 h2 {
+    font-size: 24px;
+  }
+  .genocide-info {
+    padding: 5px 20px 0px;
+  }
+  .genocide-info img {
+    float: none;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 576px) {
+  .banner_title h1 {
+    font-size: 22px;
+  }
+  .genocide-info img {
+    margin-top: 10px;
+  }
 }
 @media (max-width: 480px) {
+  .banner_title h1 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  .info {
+    margin-top: 0;
+    height: 340px;
+  }
+
+  .genocide-info img {
+    margin-top: 20px;
+  }
 }
 @media (max-width: 380px) {
+  .banner_title h1 {
+    font-size: 16px;
+  }
+  .genocide-info img {
+    margin-top: 20px;
+  }
+  .info {
+    height: 400px;
+  }
 }
