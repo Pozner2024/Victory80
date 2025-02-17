@@ -1,0 +1,194 @@
+/* Заголовок */
+.banner_title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Текстовый блок */
+.vitebsk-text-block {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.vitebsk-text-block p {
+  text-indent: 30px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Информационный блок */
+.vitebsk-info {
+  padding: 20px 100px 10px;
+}
+
+.vitebsk-info img {
+  float: right;
+  width: 50%;
+  height: auto;
+}
+
+.vitebsk-info figure {
+  display: block;
+}
+
+.vitebsk-info figure.single {
+  float: right;
+  width: 40%;
+  margin: 0 0 10px 10px;
+}
+
+.vitebsk-info figure.single img {
+  width: 100%;
+  display: block;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+.timeline {
+  padding: 20px;
+  background: #f9f9f9;
+  border-left: 4px solid #333;
+  margin-top: 20px;
+}
+
+.timeline ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.timeline li {
+  position: relative;
+}
+
+.timeline li::before {
+  content: "\2022";
+  color: #333;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Контейнер изображений */
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.image-container figure {
+  width: 35%;
+  margin: 0 auto;
+  display: block;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1400px) {
+  .banner_title h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 1200px) {
+  .banner_title h1 {
+    font-size: 28px;
+  }
+  .vitebsk-info {
+    padding: 10px 50px 5px;
+  }
+  .vitebsk-info img {
+    margin: 10px auto;
+  }
+}
+@media (max-width: 980px) {
+  .banner_title h1 {
+    font-size: 26px;
+  }
+  .banner_title {
+    margin: 0px;
+  }
+
+  /* Убираем обтекание и делаем изображения блочными */
+  .vitebsk-info img {
+    float: none;
+    margin: 0 auto;
+    width: 80%;
+  }
+  .vitebsk-info figure.single {
+    float: none;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-container figure {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner_title h1 {
+    font-size: 22px;
+  }
+  .vitebsk-info {
+    padding: 0px 20px 0px;
+  }
+
+  figcaption {
+    margin-top: 2px;
+    font-size: 12px;
+  }
+  /* Для контейнера изображений: выстраиваем картинки в колонку */
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-container figure {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .banner_title h1 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  h3 {
+    font-size: 18px;
+  }
+
+  figcaption {
+    font-size: 10px;
+  }
+  .timeline h3 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 380px) {
+  .banner_title h1 {
+    font-size: 16px;
+  }
+}

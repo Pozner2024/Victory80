@@ -170,6 +170,27 @@ function toggleFullscreen() {
     document.exitFullscreen();
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const mainContainer = document.querySelector(".main");
+
+  mainContainer.addEventListener("click", (event) => {
+    const playBtn = event.target.closest(".play-audio-button");
+
+    if (!playBtn) return;
+
+    const parentBlock = playBtn.closest(".main_text");
+
+    const audio = parentBlock.querySelector("audio");
+
+    if (audio.paused) {
+      audio.play();
+      playBtn.textContent = "⏸ Остановить";
+    } else {
+      audio.pause();
+      playBtn.textContent = "🎧 Прослушать";
+    }
+  });
+});
 
 // Находим контейнер для года
 const yearContainer = document.querySelector("#year");

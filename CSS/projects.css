@@ -1,6 +1,6 @@
 /* Стили для страницы projects */
 .project-container {
-  margin: 50px 100px;
+  margin: 20px 100px;
 }
 .project-2_gallery,
 .project-3_gallery,
@@ -51,6 +51,14 @@
 .project-3_gallery img:hover,
 .project-4_gallery img:hover {
   transform: scale(1.05);
+}
+.project img,
+.project-1_gallery img,
+.project-2_gallery img,
+.project-3_gallery img,
+.project-4_gallery img,
+.gallery-item a img {
+  transition: transform 0.3s ease;
 }
 
 .project-1_gallery {
