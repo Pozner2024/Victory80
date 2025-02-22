@@ -192,17 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Находим контейнер для года
-const yearContainer = document.querySelector("#year");
-// Устанавливаем текущий год в контейнер
-
-yearContainer.innerHTML = new Date().getFullYear();
-
-const lightbox = GLightbox({
-  touchNavigation: true,
-  loop: true,
-});
-
 // Этот блок кода отвечает за обработку кликов внутри контейнера с классом 'container_events'.
 // выше реализовано то же самое, но через класс.
 // const containerEvents = document.querySelector(".container_events");

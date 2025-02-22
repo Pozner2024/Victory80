@@ -79,11 +79,11 @@ body {
   right: 0;
 }
 .menu_list_480.opened {
-  display: block; /* Показываем меню при добавлении класса opened */
+  display: block;
 }
 
 .menu_toggler.opened {
-  background-color: #ccc; /* Пример изменения стиля кнопки */
+  background-color: #ccc;
 }
 .menu {
   position: relative;
@@ -203,6 +203,14 @@ h2 + p {
 .centered-title {
   text-align: center;
 }
+.centered h1 {
+  font-size: 26px;
+  text-align: center;
+}
+.centered h2 {
+  font-size: 20px;
+  text-align: center;
+}
 /* Для первого слайдера */
 .slider-vit {
   width: 90%;
@@ -263,15 +271,39 @@ h2 + p {
   font-size: 18px;
   padding: 60px;
 }
-.slider .slick-arrow {
-  background-color: #b10707;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
+
 .slider .slick-dots li button::before {
   color: #b10707;
-  font-size: 40px;
+  font-size: 20px;
+}
+.slick-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Размер кнопки */
+  height: 40px; /* Размер кнопки */
+  background-color: #b10707; /* Цвет фона */
+  border-radius: 50%; /* Делаем кнопку круглой */
+}
+
+/* Стили для внутреннего элемента стрелки */
+.slick-arrow::before {
+  font-size: 18px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+.slick-arrow:hover {
+  opacity: 1;
+  background-color: #8b0606;
+}
+.slick-arrow {
+  opacity: 1;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.slick-arrow:active {
+  opacity: 1;
 }
 
 .topic_header {
@@ -376,7 +408,7 @@ h2 + p {
   background-position: center; /* Центрирует фоновое изображение внутри элемента */
   background-size: cover; /* Масштабирует фоновое изображение так, чтобы оно полностью покрывало элемент, сохраняя пропорции */
   background-attachment: fixed; /* Фиксирует фоновое изображение относительно окна браузера, а не элемента */
-  background-image: url("../images/content/victory.jpg"); /* Устанавливает изображение в качестве фона элемента */
+  background-image: url("../images/content/background.jpg"); /* Устанавливает изображение в качестве фона элемента */
   height: 600px;
   width: 100%;
   margin-top: 80px;
@@ -792,7 +824,7 @@ h3 {
     margin: 0 14px;
   }
   .banner {
-    height: 400px;
+    height: 420px;
   }
   .banner_text {
     font-size: 20px;
@@ -874,7 +906,9 @@ h3 {
   .button_event-4 {
     margin-left: 70px;
   }
-
+  .text_container {
+    width: 80%;
+  }
   .post_container iframe {
     width: 80%;
   }
@@ -927,15 +961,12 @@ h3 {
     margin-top: 0;
   }
   .banner {
-    height: 330px;
+    height: 350px;
   }
   .topic h1 {
     font-size: 18px;
   }
-  .slide {
-    height: 160px;
-    margin: 5px;
-  }
+
   .slider .slick-arrow {
     height: 20px;
     width: 20px;
@@ -949,10 +980,47 @@ h3 {
     margin-left: 1px;
   }
   .slider .slick-dots li button::before {
-    font-size: 30px;
+    font-size: 10px;
+  }
+  .slider-vit .slide_text,
+  .slider-memories .slide_text {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 18px;
+    padding: 60px;
+    text-align: center;
+  }
+
+  .slider-vit .slide:hover .slide_text,
+  .slider-memories .slide:hover .slide_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slider-vit .slide {
+    height: 240px;
+  }
+
+  .slider-memories .slide {
+    height: 160px;
+    margin: 5px;
   }
   .banner_title {
     font-size: 12px;
+  }
+  .centered h1 {
+    font-size: 22px;
+  }
+  .centered h2 {
+    font-size: 16px;
   }
   .container_events {
     display: flex;
@@ -960,7 +1028,9 @@ h3 {
     margin: 0 auto;
     max-width: 80%;
   }
-
+  .banner_title h1 {
+    font-size: 28px;
+  }
   .films_video {
     width: 100%; /* Устанавливаем ширину видео на 100% */
     max-width: 100%; /* Максимальная ширина 100% */
@@ -1009,11 +1079,17 @@ h3 {
   .section_item img {
     width: 100%;
   }
+  .section_images-1,
+  .section_images-2,
+  .section_images-3,
+  .section_images-4 {
+    width: 80%;
+  }
   .section_item h1 {
     font-size: 28px;
   }
   .info {
-    height: 500px;
+    height: 460px;
   }
   .info-text {
     padding-top: 30px;
@@ -1045,11 +1121,14 @@ h3 {
     display: none;
   }
   .banner {
-    height: 200px;
+    height: 220px;
   }
   .banner_title {
     font-size: 10px;
     padding: 5px;
+  }
+  .banner_title h1 {
+    font-size: 22px;
   }
   .topic-1 img,
   .topic-3 img,
@@ -1061,11 +1140,14 @@ h3 {
   h2 {
     font-size: 16px;
   }
+  .slider-vit {
+    width: 80%;
+  }
+  .slider-memories {
+    width: 80%;
+  }
   .slide {
     height: 140px;
-  }
-  .slider .slick-dots li button::before {
-    font-size: 20px;
   }
 
   .post_text {
@@ -1076,6 +1158,12 @@ h3 {
   }
   .post_container iframe {
     height: 250px;
+  }
+  .section_images-1,
+  .section_images-2,
+  .section_images-3,
+  .section_images-4 {
+    width: 90%;
   }
   .section {
     padding: 0 20px 0;
@@ -1097,12 +1185,16 @@ h3 {
     flex-direction: column;
     height: 250px;
   }
+  .info {
+    height: 480px;
+    margin-top: 20px;
+  }
   .info-text {
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 20px;
   }
   .footer-info_text-1 {
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 12px;
   }
   .footer-info_text-2 {
@@ -1168,17 +1260,25 @@ h3 {
 
   .slider .slick-next::before {
     font-size: 10px;
-    line-height: 0.3;
+    line-height: 0.5;
   }
   .slider .slick-prev::before {
     font-size: 10px;
-    line-height: 0.3;
+    line-height: 0.5;
   }
   .slider .slick-dots li button::before {
-    font-size: 15px;
+    font-size: 5px;
+  }
+  .centered h1 {
+    font-size: 20px;
+    margin: 10px;
+  }
+  .centered h2 {
+    font-size: 14px;
+    margin: 10px;
   }
   .banner {
-    height: 250px;
+    height: 260px;
     margin-bottom: 10px;
   }
   .banner_title {
@@ -1186,11 +1286,17 @@ h3 {
     padding: 5px;
     height: 70px;
   }
+  .banner_title h1 {
+    font-size: 18px;
+  }
   .banner_text h1 {
     font-size: 30px;
   }
   .event-1 {
     margin-top: 5px;
+  }
+  .text_container {
+    width: 90%;
   }
   .topic {
     margin-top: 10px;
@@ -1222,10 +1328,11 @@ h3 {
     border-radius: 5px;
   }
   .info {
-    height: 440px;
+    height: 340px;
+    margin-top: 15px;
   }
   .info-text {
-    margin: 20px auto;
+    margin: 0 auto 20px;
     padding-top: 5px;
     font-size: 12px;
     width: 94%;
@@ -1242,6 +1349,10 @@ h3 {
     height: 120px;
     margin: 0 60px;
   }
+  .banner {
+    height: 270px;
+    margin-bottom: 0px;
+  }
   .banner_text h1 {
     font-size: 28px;
   }
@@ -1253,9 +1364,15 @@ h3 {
   .slick-arrow {
     margin: 10px;
   }
-
+  .centered h1 {
+    font-size: 16px;
+  }
+  .centered h2 {
+    font-size: 12px;
+  }
   .info {
-    margin-top: 20px;
+    margin-top: 5px;
+    height: 410px;
   }
   .info-text {
     margin-top: 0;

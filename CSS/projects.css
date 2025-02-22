@@ -1,7 +1,8 @@
-/* Стили для страницы projects */
+/* Стили для страницы projects  */
 .project-container {
   margin: 20px 100px;
 }
+.project-0_gallery,
 .project-2_gallery,
 .project-3_gallery,
 .project-4_gallery {
@@ -10,7 +11,8 @@
   gap: 10px;
   margin-bottom: 50px;
 }
-.project-1_gallery a {
+.project-1_gallery a,
+.project-5_gallery a {
   flex: 1 1 calc(25% - 10px);
   display: block;
 }
@@ -18,6 +20,7 @@
   flex: 1 1 calc(40% - 10px);
   display: block;
 }
+.project-0_gallery a,
 .project-2_gallery a,
 .project-4_gallery a {
   flex: 1 1 calc(30% - 10px);
@@ -34,7 +37,8 @@
   object-fit: cover;
   transition: transform 0.3s;
 }
-.project-1_gallery img {
+.project-1_gallery img,
+.project-5_gallery img {
   height: 320px;
 }
 .project-2_gallery img {
@@ -43,25 +47,31 @@
 .project-3_gallery img {
   height: 380px;
 }
+.project-0_gallery img,
 .project-4_gallery img {
   height: 580px;
 }
+.project-0_gallery img:hover,
 .project-1_gallery img:hover,
 .project-2_gallery img:hover,
 .project-3_gallery img:hover,
-.project-4_gallery img:hover {
+.project-4_gallery img:hover,
+.project-5_gallery img:hover {
   transform: scale(1.05);
 }
 .project img,
+.project-0_gallery img,
 .project-1_gallery img,
 .project-2_gallery img,
 .project-3_gallery img,
 .project-4_gallery img,
+.project-5_gallery img,
 .gallery-item a img {
   transition: transform 0.3s ease;
 }
 
-.project-1_gallery {
+.project-1_gallery,
+.project-5_gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -105,17 +115,28 @@
 }
 
 @media (max-width: 1400px) {
+  .project-container {
+    margin: 10px 50px;
+  }
 }
 @media (max-width: 1200px) {
-  .project-1_gallery img,
-  .project-3_gallery img {
+  .project-0_gallery a img {
+    height: 500px;
+  }
+  .project-1_gallery a img {
     height: 200px;
   }
-  .project-2_gallery img {
+  .project-2_gallery a img {
     height: 300px;
   }
-  .project-4_gallery img {
+  .project-3_gallery a img {
+    height: 200px;
+  }
+  .project-4_gallery a img {
     height: 500px;
+  }
+  .project-5_gallery a img {
+    height: 200px;
   }
 }
 @media (max-width: 980px) {
@@ -134,27 +155,42 @@
   }
 }
 @media (max-width: 768px) {
-  .project-4_gallery img {
-    height: 250px;
+  .project-container {
+    margin: 0px 10px;
+  }
+  .project-1_gallery img,
+  .project-3_gallery img,
+  .project-3_gallery img {
+    height: 240px;
+  }
+  .project-2_gallery img {
+    height: 260px;
   }
 }
 @media (max-width: 576px) {
-  .project-1_gallery a,
+  .project-1_gallery .gallery-item,
+  .project-5_gallery .gallery-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .project-0_gallery a,
   .project-2_gallery a,
   .project-3_gallery a,
   .project-4_gallery a {
     flex: 1 1 100%;
-    margin: 10px 100px;
+    margin: 10px 20px;
   }
   .project-1_gallery img,
+  .project-3_gallery img,
   .project-3_gallery img {
-    height: 200px;
+    height: 220px;
   }
   .project-2_gallery img {
     height: 250px;
   }
+  .project-0_gallery img,
   .project-4_gallery img {
-    height: 360px;
+    height: 400px;
   }
   .project-1_gallery,
   .project-2_gallery,
@@ -162,57 +198,15 @@
   .project-4_gallery {
     margin-bottom: 10px;
   }
+
+  .ar-button {
+    margin-top: 4px;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 2px;
+  }
 }
 @media (max-width: 480px) {
 }
 @media (max-width: 380px) {
 }
-
-/* Стили для страницы projects */
-/* .project-container {
-  margin: 50px 100px;
-}
-.project-1_gallery,
-.project-2_gallery,
-.project-3_gallery,
-.project-4_gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 50px;
-}
-
-.project-1_gallery a,
-.project-3_gallery a {
-  flex: 1 1 calc(25% - 10px);
-  display: block;
-}
-.project img {
-  width: 100%;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-.project-1_gallery img {
-  height: 320px;
-}
-.project-2_gallery img {
-  height: 380px;
-}
-.project-3_gallery img {
-  height: 250px;
-}
-.project-4_gallery img {
-  height: 580px;
-}
-.project-1_gallery img:hover,
-.project-2_gallery img:hover,
-.project-3_gallery img:hover,
-.project-4_gallery img:hover {
-  transform: scale(1.05);
-}
-
-.project-2_gallery a,
-.project-4_gallery a {
-  flex: 1 1 calc(30% - 10px);
-  display: block;
-} */
