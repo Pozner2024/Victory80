@@ -220,10 +220,4 @@
   }
 }
 @media (max-width: 380px) {
-  .project-1_gallery .gallery-item,
-  .project-5_gallery .gallery-item {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
 }
