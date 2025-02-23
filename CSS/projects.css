@@ -182,12 +182,16 @@
   }
 
   .project-0_gallery img,
-  .project-1_gallery img,
   .project-2_gallery img,
   .project-3_gallery img,
-  .project-4_gallery img,
-  .project-5_gallery img {
+  .project-4_gallery img {
     width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .project-1_gallery img,
+  .project-5_gallery img {
+    width: 80%;
     height: auto;
     object-fit: cover;
   }

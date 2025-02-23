@@ -1375,11 +1375,12 @@ h3 {
   }
   .info {
     margin-top: 5px;
-    height: 420px;
+    height: 410px;
   }
   .info-text {
     margin-top: 0;
     padding-top: 5px;
+    height: 260px;
   }
   .info-text h2 {
     margin-top: 4px;
