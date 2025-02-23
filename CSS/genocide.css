@@ -104,6 +104,8 @@ blockquote {
 
   .genocide-info img {
     margin-top: 20px;
+    width: 80%;
+    height: auto;
   }
 }
 @media (max-width: 380px) {

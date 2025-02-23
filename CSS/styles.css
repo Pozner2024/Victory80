@@ -1343,6 +1343,9 @@ h3 {
   .footer_text i.fa-2xl::before {
     font-size: 16px;
   }
+  .slick-dots {
+    bottom: -30px;
+  }
 }
 @media (max-width: 380px) {
   .slide {
@@ -1372,7 +1375,7 @@ h3 {
   }
   .info {
     margin-top: 5px;
-    height: 410px;
+    height: 420px;
   }
   .info-text {
     margin-top: 0;
@@ -1386,5 +1389,8 @@ h3 {
   }
   .footer-info_text-2 {
     margin-left: -150px;
+  }
+  .slick-dots {
+    bottom: -40px;
   }
 }

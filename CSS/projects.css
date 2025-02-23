@@ -180,18 +180,18 @@
     flex: 1 1 100%;
     margin: 10px 20px;
   }
-  .project-1_gallery img,
-  .project-3_gallery img,
-  .project-3_gallery img {
-    height: 220px;
-  }
-  .project-2_gallery img {
-    height: 250px;
-  }
+
   .project-0_gallery img,
-  .project-4_gallery img {
-    height: 400px;
+  .project-1_gallery img,
+  .project-2_gallery img,
+  .project-3_gallery img,
+  .project-4_gallery img,
+  .project-5_gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
+  .project-0_gallery,
   .project-1_gallery,
   .project-2_gallery,
   .project-3_gallery,
