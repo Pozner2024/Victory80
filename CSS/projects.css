@@ -211,6 +211,19 @@
   }
 }
 @media (max-width: 480px) {
+  .project-1_gallery .gallery-item,
+  .project-5_gallery .gallery-item {
+    flex: none;
+    width: 80%;
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 380px) {
+  .project-1_gallery .gallery-item,
+  .project-5_gallery .gallery-item {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 }
