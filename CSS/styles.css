@@ -1337,6 +1337,20 @@ h3 {
     font-size: 12px;
     width: 94%;
   }
+  .footer-info_text-1 {
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 0;
+  }
+  .footer-info_text-2 {
+    display: none;
+  }
+  .footer-info {
+    height: 150px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
   .footer_text a {
     margin-right: 30px;
   }
